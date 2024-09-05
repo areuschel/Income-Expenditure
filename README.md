@@ -15,18 +15,47 @@ The study of consumer behaviors is integral to the regulation of domestic and in
 
 <h2>Project walk-through:</h2>
 
-### Replication Paper
+## Replication Paper
 This project was based off an existing paper written by Mingzhao Hu, a biostatistician and lecturer at the Mayo Clinic who published a research paper in 2022 while at the University of California Santa Barbara using data from the 2016 Consumer Expenditure survey. The motivation behind this paper was to create a data analysis and visualization pipeline for understanding the relationship between demographics, income, and expenditures for US households. 
 
 The Consumer Expenditure (CE) survey is unique in that it is the only nationwide survey of demographics, income, expenditure that measures responses on a quarterly basis. In this paper, Hu uses consumer response data from the first quarter of the 2016 fiscal year. The raw data contains 808 original variables, from which Hu initially selects 35 to perform multivariate statistical methods on. In this paper, Hu employs multivariate methods such as Principal Components Analysis (PCA), hierarchical clustering, and Canonical Correlation Analysis (CCA) to draw insights about the relationships between selected variables.
 
-link: https://link.springer.com/article/10.1007/s00180-022-01251-2
+Hu, Paper: https://link.springer.com/article/10.1007/s00180-022-01251-2
+
+BLS Data: https://www.bls.gov/cex/pumd.htm
 
 ### Feature Selection and Description
-![Norm](/mvn_normality_roy.png?raw=true "Test")
-![Norm](/mvn_normality_roy.png?raw=true "Test")
-![Norm](/mvn_normality_roy.png?raw=true "Test")
-![Norm](/mvn_normality_roy.png?raw=true "Test")
+Mingzhao Hu used financial domain knowledge to select 35 of the 808 original features that represented different dimensions of income, expenditure, and demographic information. Brief descriptions of each variable are given below. For replication purposes, I used the same variables.
+
+![Norm](/var_desc_1.png?raw=true "Test")
+![Norm](/var_desc_2.png?raw=true "Test")
+![Norm](/var_desc_3.png?raw=true "Test")
+![Norm](/var_desc_4.png?raw=true "Test")
+
+
+## Exploratory Data Analysis
+### Dealing with Categorical Variables
+Many of the statistical methods used in this project assume continuous variables. There are still ways to incorporate categorical information. One option will be shown in the replication section, while I propose an alternative use in the independent analysis section of this project.
+
+
+Variable breakdown:
+- - - - - - - - - - - - - - - - - - - - - - - - -
+
+🌆 (14) - consumer demographics... includes 4 categorical variables
+
+💰 (10) - consumer income
+
+🛍️ (11) - consumer expenditures
+
+🟰 6,426 total observations, 35 total variables
+
+- Hu decides to one-hot encode the rest of the categorical variables, creating more columns of “1”s and “0”s. For replication purposes, I followed this step, though I will discuss other options in the independent analysis section of this paper. 
+
+- The first flag raised in exploratory analysis was that many households reported values of “0” for total expenditure. This is unrealistic and therefore 2,171 observations are removed. Hu examines these missing observations, but no apparent patterns are found; thus, he assumes this is random.
+
+
+### Missing Values
+Next, Hu finds the percentage of “NA” values within the remaining variables and removes 6 income variables (Appendix, Table 1). All of my calculations up to this point match Hu’s description in the paper. Now, the dataset contains 4,254 observations and 43 columns with the addition of the dummy variables. The correlation matrix for these 43 variables is large, so it is visualized with a heatmap (Appendix, Figure 1). It is important to note that the outer top right section looks like there is no relationship between many of the variables, but this is due to the many dummy variables created for race, education, and sex. Otherwise, we can note that the other income and expenditure variables are related either negatively or positively. Additionally, out of the 4,254 observations, the respondent makeup is overwhelmingly White (Appendix, Figure 2). This is important to acknowledge moving forward and challenges the robustness of racial interpretations.
 
 
 ### Data Cleaning
