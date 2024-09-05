@@ -61,16 +61,28 @@ Percentage of "NA" Values and Race Demographic Breakdown
 
 - the 6 income variables in the table above were removed due to high % of missing data
 - this data is heavily skewed towards white households thus challenging the robustness of racial interpretations
-
-Now, the dataset contains 4,254 observations and 43 columns with the addition of the dummy variables for categorical demographic information. 
  
 The correlation matrix for these 43 variables is large, so it is visualized with a heatmap.
-![Norm](/income_EDA.png?raw=true "Test")
+![Norm](/corr_m.png?raw=true "Test")
 
 It is important to note that the outer top right section looks like there is no relationship between many of the variables, but this is due to the many dummy variables created for race, education, and sex. Otherwise, we can note that the other income and expenditure variables are related either negatively or positively. These relationships are needed to validate assumptions for PCA and other statistical methods employed in this project.
 
 
-### Data Cleaning
+## Statistical Methods: Replication
+![Norm](/title_slide_1.png?raw=true "Test")
+
+As always, let's check the assumptions of the first method. The following checklist follows Mingzhao Hu's paper. The assumptions not addressed in the replication paper will be addressed in the independent analysis section.
+
+#### Checking PCA Assumptions:
+- <b>Continuous variables</b>
+   - ❌✅
+- <b>Linear relationships between variables</b>
+   - ✅
+- <b>High sample size</b>
+   - ✅
+- <b>No significant outliers</b>
+   - ❌
+
    
 
 
