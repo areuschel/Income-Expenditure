@@ -83,42 +83,101 @@ As always, let's check the assumptions of the first method. The following checkl
 - <b>No significant outliers</b>
    - ❌
 
+#### Full Model, Replication
+
+1. Number of principal componenets = 
+
+![scree](/scree_pca1.png?raw=true "PCA")
+
+2. Proportion of variance explained
+
+   PC1: 
+
+   PC2: 
+
+   PC3: 
+
+   PC4: 
+
+🎖 TOTAL: 
+
+3. Biplot, PC1-PC2
+
+![biplot](/biplot_pca1.png?raw=true "PCA")
+
    
 
 
-### Dataset Dilemma: Sacrifice Sample Size or Demographic Info?
+#### Race stratifications graphed on PC1 and PC2, Replication
 
 
 
-### Description of Variables: Cleaned Dataset
+#### Single-sex Household Model, Replication
+1. Number of principal componenets = 
+
+![scree](/scree_pca1.png?raw=true "PCA")
+
+2. Proportion of variance explained
+
+   PC1: %
+
+   PC2: %
+
+   PC3: %
+
+   PC4: %
+
+🎖 TOTAL: % 
+
+3. Biplot, PC1-PC2
+
+![biplot](/biplot_pca1.png?raw=true "PCA")
 
 
 
-### MANOVA: Multivariate Analysis Of Variance
+#### Sparse PCA, Replication
 
 
-#### Checking MANOVA Assumptions:
-- <b>Independence between observations</b>
-  - ✅
-- <b>Multivariate Normality</b>
-   - ❌
+## PCA, Independent Analysis
 
-Royston's Test for Multivariate Normality
-     
-![Norm](/mvn_normality_roy.png?raw=true "Test")
+#### Multivariate Outliers
+
+#### My Full Model
+
+After completing the replication, I had many ideas of what I wanted to do differently. 
+
+1. Number of principal componenets = 
+
+![scree](/scree_pca1.png?raw=true "PCA")
+
+2. Proportion of variance explained
+
+   PC1: %
+
+   PC2: %
+
+   PC3: %
+
+   PC4: %
+
+🎖 TOTAL: % 
+
+3. Biplot, PC1-PC2
+
+![biplot](/biplot_pca1.png?raw=true "PCA")
 
 
-- <b>Absence of multicollinearity</b>
-   - ❌✅
+#### Comparing PCA Models, Replication vs. Independent Analysis
 
-![Cor](/cor_heatmap_1.png?raw=true "Heatmap")
+## Clustering, Replication
 
+### Two approaches: ClustOfVar and varclus libraries
 
+### Comparing results
 
+## CCA: Canonical Correlation Analysis
 
-### Principal Components Analysis (PCA)
-
-#### Checking PCA Assumptions:
+#### Checking CCA Assumptions:
 - <b>Continuous variables</b>
    - ✅
 - <b>Linear relationships between variables</b>
@@ -128,94 +187,22 @@ Royston's Test for Multivariate Normality
 - <b>No significant outliers</b>
    - ❌✅
 
-### Full Model
+### Comparing Results
 
-1. Number of principal componenets = 4
+## Further Independent Analysis
 
-![scree](/scree_pca1.png?raw=true "PCA")
+### Changing the use of categorical variables
 
-2. Proportion of variance explained
+### Checking for MV Outliers
 
-   PC1: 38.6%
+### K-means Clustering
 
-   PC2: 17.9%
+### Principal Components Analysis (PCA)
 
-   PC3: 12.4%
+## Conclusions
 
-   PC4: 6.3%
+### Paper Acknowledgement
 
-🎖 TOTAL: 75.2% 
+### Impact of Independent Analysis
 
-4. Biplot, PC1-PC2
-
-![biplot](/biplot_pca1.png?raw=true "PCA")
-
-   
-
-### Model without outliers
-
-This model produced results nearly indentical to the full model, thus they are not described here. Documentation in the R code shows full comparison of these two models.
-
-### Subsetting by % Free and Reduced Lunch
-
-One of my original questions about student performance among Missouri high schools was on the effect of wealth/nourishment through the given Free and Reduced Lunch (FRL) metric. Due to the assumptions of MANOVA being violated, I could not run that multivariate test. I chose to subset my cleaned dataset by schools with 50% or more qualifying for FRL and one for less than 50%.
-
-### PCA, <50% qualifying for FRL (💰 higher income)
-
-1. Number of principal components = 4
-
-![scree](/scree_low_FRL.png?raw=true "PCA")
-
-2. Proportion of variance explained
-
-   PC1: 35.7%
-
-   PC2: 23.0%
-
-   PC3: 12.6%
-
-   PC4: 7.7%
-
-🎖 TOTAL: 79.0% 
-
-3. Biplot, PC1-PC2
-
-![scree](/biplot_low_FRL.png?raw=true "PCA")
-
-
-### PCA, >50% qualifying for FRL (💰 lower income)
-
-1. Number of principal components = 4
-
-![scree](/scree_high_FRL.png?raw=true "PCA")
-
-2. Proportion of variance explained
-
-   PC1: 39.3%
-
-   PC2: 17.4%
-
-   PC3: 8.9%
-
-   PC4: 6.6%
-
-🎖 TOTAL: 72.2% 
-
-3. Biplot, PC1-PC2
-
-![scree](/biplot_high_FRL.png?raw=true "PCA")
-
-
-
-### Interpretations
-
-![scree](/biplot_comparison.png?raw=true "PCA")
-
-![scree](/pca_interpretations.png?raw=true "PCA")
-
-### Future work and considerations
-
-- Canonical Correlation Analysis
-   - This method could potentially identify relationships between performance metrics and demographic makeup
-- K-means clustering
-   - The PCA's provided are a good basis for identifying schools similar to each other based on size and performance
+### Future Considerations
