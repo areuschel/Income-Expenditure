@@ -115,7 +115,7 @@ As always, let's check the assumptions of the first method. The following checkl
 #### Single-sex Household Model, Replication
 1. Number of principal componenets = 
 
-![scree](/scree_pca1.png?raw=true "PCA")
+![scree](/title_slide_2.png?raw=true "PCA")
 
 2. Proportion of variance explained
 
@@ -136,9 +136,12 @@ As always, let's check the assumptions of the first method. The following checkl
 
 
 #### Sparse PCA, Replication
+![title](/title_slide_3.png?raw=true "PCA")
 
 
 ## PCA, Independent Analysis
+![title](/title_slide_4.png?raw=true "PCA")
+
 
 #### Multivariate Outliers
 
@@ -168,8 +171,13 @@ After completing the replication, I had many ideas of what I wanted to do differ
 
 
 #### Comparing PCA Models, Replication vs. Independent Analysis
+![compare](/pca_comparison.png?raw=true "PCA")
+
+
 
 ## Clustering, Replication
+![title](/title_slide_5.png?raw=true "PCA")
+
 
 ### Two approaches: ClustOfVar and varclus libraries
 
