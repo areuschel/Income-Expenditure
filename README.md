@@ -94,7 +94,7 @@ As always, let's check the assumptions of the first method. The following checkl
 
 1. Number of principal componenets = 
 
-![scree](/scree_pca1.png?raw=true "PCA")
+![scree](/Scree_rep1.png?raw=true "PCA")
 
 2. Proportion of variance explained
 
