@@ -61,10 +61,12 @@ Many of the statistical methods used in this project assume continuous variables
 
 ### Missing Values
 
-Percentage of "NA" Values and Race Demographic Breakdown
-![Norm](/income_EDA.png?raw=true "Test")
+![eda](/Income_EDA.png?raw=true "Test")
 
 - the 6 income variables in the table above were removed due to high % of missing data
+
+![eda](/Race_EDA.png?raw=true "Test")
+
 - this data is heavily skewed towards white households thus challenging the robustness of racial interpretations
  
 The correlation matrix for these 43 variables is large, so it is visualized with a heatmap.
