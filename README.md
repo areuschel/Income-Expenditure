@@ -32,10 +32,7 @@ BLS Data: https://www.bls.gov/cex/pumd.htm
 ### Feature Selection and Description
 Mingzhao Hu used financial domain knowledge to select 35 of the 808 original features that represented different dimensions of income, expenditure, and demographic information. Brief descriptions of each variable are given below. For replication purposes, I used the same variables.
 
-![Norm](/var_desc_1.png?raw=true "Test")
-![Norm](/var_desc_2.png?raw=true "Test")
-![Norm](/var_desc_3.png?raw=true "Test")
-![Norm](/var_desc_4.png?raw=true "Test")
+![Norm](/variable_desc.jpeg?raw=true "Test")
 
 
 ## Exploratory Data Analysis
