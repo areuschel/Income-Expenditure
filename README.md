@@ -32,7 +32,7 @@ BLS Data: https://www.bls.gov/cex/pumd.htm
 ### Feature Selection and Description
 Mingzhao Hu used financial domain knowledge to select 35 of the 808 original features that represented different dimensions of income, expenditure, and demographic information. Brief descriptions of each variable are given below. For replication purposes, I used the same variables.
 
-![Norm](/variable_desc.jpeg?raw=true "Test")
+![Norm](/variable_desc.JPEG?raw=true "Test")
 
 
 ## Exploratory Data Analysis
@@ -67,6 +67,8 @@ Many of the statistical methods used in this project assume continuous variables
 - this data is heavily skewed towards white households thus challenging the robustness of racial interpretations
  
 The correlation matrix for these 43 variables is large, so it is visualized with a heatmap.
+
+
 ![Norm](/corr_m.png?raw=true "Test")
 
 It is important to note that the outer top right section looks like there is no relationship between many of the variables, but this is due to the many dummy variables created for race, education, and sex. Otherwise, we can note that the other income and expenditure variables are related either negatively or positively. These relationships are needed to validate assumptions for PCA and other statistical methods employed in this project.
