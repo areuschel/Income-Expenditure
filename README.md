@@ -114,9 +114,15 @@ Using PC1 and PC2 from the model above, observations are graphed and split accor
 
 ![race](/pc1_race.png?raw=true "PCA")
 
+The most notable difference seen in my plots above is that the White respondents occupy more space above the first principal component that represents important income and expenditure variables. While the overall model did not perform exceedingly well, this raises the question of income disparities between White and non-White racial groups. For a more robust interterpretation of racial difference in consumer behavior, I would prefer to have higher sample sizes for Black, Asian, and Multi-racial family units.
 
 
 #### Single-sex Household Model, Replication
+
+One additional group Hu extracted from this data was single-sex households. The image below shows how this subset was created.
+
+![chunk](/chunk_1.png?raw=true "PCA")
+
 1. Number of principal componenets = 
 
 ![scree](/title_slide_2.png?raw=true "PCA")
