@@ -58,16 +58,12 @@ Many of the statistical methods used in this project assume continuous variables
 - The first flag raised in exploratory analysis was that many households reported values of “0” for total expenditure. This is unrealistic and therefore 2,171 observations are removed. Hu examines these missing observations, but no apparent patterns are found; thus, he assumes this is random.
 
 
-### Missing Values
+### Missing Values and Distribution of Race
 
 - The table below shows variables removed due to high % of missing data
 
-![eda](/Income_EDA.png?raw=true "Test")
+![eda](/EDA_comn.JPEG?raw=true "Test")
 
-
-### Race Distribution
-
-![eda](/Race_EDA.png?raw=true "Test")
 
 
 ### Correlation Matrix
