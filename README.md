@@ -42,7 +42,7 @@ Mingzhao Hu used financial domain knowledge to select 35 of the 808 original fea
 Many of the statistical methods used in this project assume continuous variables. There are still ways to incorporate categorical information. One option will be shown in the replication section, while I propose an alternative use in the independent analysis section of this project.
 
 
-### Variable breakdown:
+#### Variable breakdown:
 - - - - - - - - - - - - - - - - - - - - - - - - -
 
 🌆 (14) - consumer demographics (includes the 4 categorical variables)
@@ -60,24 +60,24 @@ Many of the statistical methods used in this project assume continuous variables
 
 ### Missing Values
 
+- The table below shows variables removed due to high % of missing data
+
 ![eda](/Income_EDA.png?raw=true "Test")
 
-- The 6 income variables in the table above were removed due to high % of missing data
 
 ### Race Distribution
 
 ![eda](/Race_EDA.png?raw=true "Test")
 
-- This data is heavily skewed towards white households thus challenging the robustness of racial interpretations
-
 
 ### Correlation Matrix
+
 The correlation matrix for these 43 variables is large, so it is visualized with a heatmap.
 
+It is important to note that the outer top right section looks like there is no relationship between many of the variables, but this is due to the many dummy variables created for race, education, and sex. Otherwise, we can note that the other income and expenditure variables are related either negatively or positively. These relationships are needed to validate assumptions for PCA and other statistical methods employed in this project.
 
 ![Norm](/corr_m.png?raw=true "Test")
 
-It is important to note that the outer top right section looks like there is no relationship between many of the variables, but this is due to the many dummy variables created for race, education, and sex. Otherwise, we can note that the other income and expenditure variables are related either negatively or positively. These relationships are needed to validate assumptions for PCA and other statistical methods employed in this project.
 
 
 ## Statistical Methods: Replication
@@ -114,9 +114,10 @@ As always, let's check the assumptions of the first method. The following checkl
 
 Using PC1 and PC2 from the model above, observations are graphed and split according to the available race stratifications.
 
-![race](/pc1_race.png?raw=true "PCA")
+The most notable difference seen in my plots below is that the White respondents occupy more space above the first principal component that represents important income and expenditure variables. While the overall model did not perform exceedingly well, this raises the question of income disparities between White and non-White racial groups. For a more robust interterpretation of racial difference in consumer behavior, I would prefer to have higher sample sizes for Black, Asian, and Multi-racial family units.
 
-The most notable difference seen in my plots above is that the White respondents occupy more space above the first principal component that represents important income and expenditure variables. While the overall model did not perform exceedingly well, this raises the question of income disparities between White and non-White racial groups. For a more robust interterpretation of racial difference in consumer behavior, I would prefer to have higher sample sizes for Black, Asian, and Multi-racial family units.
+
+![race](/pc1_race.png?raw=true "PCA")
 
 
 #### Single-sex Household Model, Replication
