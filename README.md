@@ -3,6 +3,8 @@ Replicated data pipeline for understanding income and expenditures of US househo
 
 <h2>Description</h2>
 
+![bls](/bls_slide.png?raw=true "PCA")
+
 The study of consumer behaviors is integral to the regulation of domestic and international trade, understanding trends in social welfare, and identifying the groups most vulnerable to market changes. Income security or insecurity has the power to alter every aspect of an individual’s life; from small everyday tasks such as deciding what to eat for lunch to having the ability and knowledge to participate in democratic processes like voting. 
 
 These far-reaching applications of economic health give us the ability to pinpoint anomalies in how different groups of people earn an income and subsequently spend their money. Thus, the study of these crucial differences can give way to new programs and policies that uplift disadvantaged communities. 
