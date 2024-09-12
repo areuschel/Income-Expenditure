@@ -1,4 +1,4 @@
-# Income_Expenditure
+# Income-Expenditure
 Replicated data pipeline for understanding income and expenditures of US households. Adjustments to orginal methods and those outcomes can be found in the "Independent Analysis" section of the project.
 
 <h2>Description</h2>
