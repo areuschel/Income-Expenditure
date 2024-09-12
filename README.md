@@ -62,7 +62,7 @@ Many of the statistical methods used in this project assume continuous variables
 
 - The table below shows variables removed due to high % of missing data
 
-![eda](/EDA_comn.JPEG?raw=true "Test")
+![eda](/EDA_comb.JPEG?raw=true "Test")
 
 
 
