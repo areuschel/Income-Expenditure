@@ -43,7 +43,7 @@ Many of the statistical methods used in this project assume continuous variables
 ### Variable breakdown:
 - - - - - - - - - - - - - - - - - - - - - - - - -
 
-🌆 (14) - consumer demographics... includes 4 categorical variables
+🌆 (14) - consumer demographics (includes the 4 categorical variables)
 
 💰 (10) - consumer income
 
@@ -60,13 +60,13 @@ Many of the statistical methods used in this project assume continuous variables
 
 ![eda](/Income_EDA.png?raw=true "Test")
 
-- the 6 income variables in the table above were removed due to high % of missing data
+- The 6 income variables in the table above were removed due to high % of missing data
 
 ### Race Distribution
 
 ![eda](/Race_EDA.png?raw=true "Test")
 
-- this data is heavily skewed towards white households thus challenging the robustness of racial interpretations
+- This data is heavily skewed towards white households thus challenging the robustness of racial interpretations
 
 
 ### Correlation Matrix
@@ -95,30 +95,24 @@ As always, let's check the assumptions of the first method. The following checkl
 
 #### Full Model, Replication
 
-1. Number of principal componenets = 
+1. Number of principal componenets = 3
+
+   - This number is selected from the scree plot below where the 'elbow' is. In other words, where does the proportion of variance from one PC to the next 'drop-off'/ each subsequent PC explains around the same % of variance.
 
 ![scree](/Scree_rep1.png?raw=true "PCA")
 
 2. Proportion of variance explained
 
-   PC1: 
+🎖 TOTAL: 36% explained with 5 PC's
 
-   PC2: 
-
-   PC3: 
-
-   PC4: 
-
-🎖 TOTAL: 
-
-3. Biplot, PC1-PC2
-
-![biplot](/biplot_pca1.png?raw=true "PCA")
-
-   
+   - Although 3 was the value selected as the optimal number of PC's based off the scree plot, I'm showing that even by adding an additional 2 principal components the overall variance explained in this model is very low. Typically, I look for 70-80% of total variance explained from a well-performing model.  
 
 
 #### Race stratifications graphed on PC1 and PC2, Replication
+
+Using PC1 and PC2 from the model above, observations are graphed and split according to the available race stratifications.
+
+![race](/pc1_race.png?raw=true "PCA")
 
 
 
