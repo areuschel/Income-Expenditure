@@ -121,29 +121,34 @@ The most notable difference seen in my plots above is that the White respondents
 
 #### Single-sex Household Model, Replication
 
-One additional group Hu extracted from this data was single-sex households. The image below shows how this subset was created.
+One additional group Hu extracted from this data was single-sex households. This is an interesting group to analyze as it contains information about same-sex couples, people living alone, and single parents. These groups are expected to have different consumer behaviors, which is the purpose for running these models separately. The image below shows how this subset was created.
 
 ![chunk](/chunk_1.png?raw=true "PCA")
 
-1. Number of principal componenets = 
+1. Number of principal componenets = 4
 
-![scree](/title_slide_2.png?raw=true "PCA")
+![scree](/biplot_scree_ss.JPEG?raw=true "PCA")
 
 2. Proportion of variance explained
 
-   PC1: %
+   PC1: 12.2%
 
-   PC2: %
+   PC2: 9.1%
 
-   PC3: %
+   PC3: 7.7%
 
-   PC4: %
+   PC4: 4.9%
 
-🎖 TOTAL: % 
+🎖 TOTAL: 33.9% 
+
+As you can see from the total proportion of variance explained, this model did not show improvement from the previous full model. Later on, I discuss changes that improve the performance of these models.
 
 3. Biplot, PC1-PC2
 
-![biplot](/biplot_pca1.png?raw=true "PCA")
+Note: I set a contribution threshold of 0.05 for plotting so that only the most important variables could be clearly seen. 
+
+Interpretation: It is clear and reasonable that the male and female variables contribute greatly overall to this model because the data was trimmed to only include single-sex homes.
+Unsurprisingly, these variables point in opposite directions on this biplot. What this plot further reveals is that the variables for family size and number of kids in the household are projected in the same positive direction as the female variables on the second principal component. This tells us that many of the single-sex homes are likely to be single mothers and have more children in the household than the male single-sex households.
 
 
 
