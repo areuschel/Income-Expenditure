@@ -91,7 +91,7 @@ As always, let's check the assumptions of the first method. The following checkl
 - <b>No significant outliers</b>
    - ❌
 
-#### Full Model, Replication
+### Full Model, Replication
 
 1. Number of principal componenets = 3
 
@@ -106,7 +106,7 @@ As always, let's check the assumptions of the first method. The following checkl
    - Although 3 was the value selected as the optimal number of PC's based off the scree plot, I'm showing that even by adding an additional 2 principal components the overall variance explained in this model is very low. Typically, I look for 70-80% of total variance explained from a well-performing model.  
 
 
-#### Race stratifications graphed on PC1 and PC2, Replication
+### Race stratifications graphed on PC1 and PC2, Replication
 
 Using PC1 and PC2 from the model above, observations are graphed and split according to the available race stratifications.
 
@@ -116,7 +116,7 @@ The most notable difference seen in my plots below is that the White respondents
 ![race](/pc1_race.png?raw=true "PCA")
 
 
-#### Single-sex Household Model, Replication
+### Single-sex Household Model, Replication
 
 One additional group Hu extracted from this data was single-sex households. This is an interesting group to analyze as it contains information about same-sex couples, people living alone, and single parents. These groups are expected to have different consumer behaviors, which is the purpose for running these models separately. The image below shows how this subset was created.
 
@@ -149,7 +149,7 @@ Unsurprisingly, these variables point in opposite directions on this biplot. Wha
 
 
 
-#### Sparse PCA, Replication
+### Sparse PCA, Replication
 ![title](/title_slide_3.png?raw=true "PCA")
 
 
