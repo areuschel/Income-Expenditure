@@ -18,6 +18,7 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 - <b>ClustOfVar</b>
 - <b>factoextra</b>
 - <b>Hmisc</b>
+- <b>nsprcomp</b>
 
 
 <h2>Project walk-through:</h2>
@@ -43,7 +44,6 @@ Many of the statistical methods used in this project assume continuous variables
 
 
 #### Variable breakdown:
-- - - - - - - - - - - - - - - - - - - - - - - - -
 
 🌆 (14) - consumer demographics (includes the 4 categorical variables)
 
@@ -61,6 +61,7 @@ Many of the statistical methods used in this project assume continuous variables
 ### Missing Values and Distribution of Race
 
 - The table below shows variables removed due to high % of missing data
+- The figure on the right shows the distribution of racial categories
 
 ![eda](/EDA_comb.JPEG?raw=true "Test")
 
@@ -84,18 +85,20 @@ As always, let's check the assumptions of the first method. The following checkl
 #### Checking PCA Assumptions:
 - <b>Continuous variables</b>
    - ❌✅
+   - categorical variables changed to binary 0's and 1's
 - <b>Linear relationships between variables</b>
    - ✅
 - <b>High sample size</b>
    - ✅
 - <b>No significant outliers</b>
    - ❌
+   - Hu does not check for outliers before using PCA
 
 ### Full Model, Replication
 
-1. Number of principal componenets = 3
+1. Number of optimal principal componenets = 3
 
-   - This number is selected from the scree plot below where the 'elbow' is. In other words, where does the proportion of variance from one PC to the next 'drop-off'/ each subsequent PC explains around the same % of variance.
+   - This number is selected from the scree plot below where the 'elbow' is. In other words, where does the proportion of variance from one PC to the next 'drop-off'?/ Where does each subsequent PC explain around the same % of variance as the previous?
 
 ![scree](/Scree_rep1.png?raw=true "PCA")
 
@@ -103,7 +106,7 @@ As always, let's check the assumptions of the first method. The following checkl
 
 🎖 TOTAL: 36% explained with 5 PC's
 
-   - Although 3 was the value selected as the optimal number of PC's based off the scree plot, I'm showing that even by adding an additional 2 principal components the overall variance explained in this model is very low. Typically, I look for 70-80% of total variance explained from a well-performing model.  
+   - Note: Although 3 was the value selected as the optimal number of PC's based off the scree plot, I'm showing that even by adding an additional 2 principal components the overall variance explained in this model is very low. Typically, I look for 70-80% of total variance explained in a well-performing model.  
 
 
 ### Race stratifications graphed on PC1 and PC2, Replication
@@ -122,9 +125,11 @@ One additional group Hu extracted from this data was single-sex households. This
 
 ![chunk](/chunk_1.png?raw=true "PCA")
 
-1. Number of principal componenets = 4
+#### Output: Scree Plot and Biplot
 
 ![scree](/biplot_scree_ss.JPEG?raw=true "PCA")
+
+1. Number of principal componenets = 4
 
 2. Proportion of variance explained
 
@@ -151,6 +156,39 @@ Unsurprisingly, these variables point in opposite directions on this biplot. Wha
 
 ### Sparse PCA, Replication
 ![title](/title_slide_3.png?raw=true "PCA")
+
+#### 🤷🏼 What is sparse PCA?
+
+Sparse PCA works similarly to regular PCA, but sets a new constraint on the model (k). k represents a predetermined integer value that limits the number of non-zero principal components. In other words, you are only allowing the 'top k' attributes to explain the variance of your data.
+
+#### Pros and Cons of sparse PCA
+
+🚀 Pros - reduces noise, increases interpretability of the individual principal components
+
+⛓️‍💥 Cons - oversimplifies the principal components
+
+#### First, is this data sparse?
+
+What even is sparse data? 
+
+Data is sparse either when (1) the raw data contains many 0's or (2) you choose to one-hot encode categorical variables. Since I followed Hu's recommendation to one-hot encode the demographic variables, my current dataset is sparse.
+
+#### Output: loadings
+
+![title](/sparse_loadings.png?raw=true "PCA")
+
+Looking at the first three PC's (contain most inforamtion about variance), you can see that the rest of the variables are set to 0 because the k value selected was 5 (k=5). 
+
+Recall, the first three PC's from the full model represented (1) income and expenditure, (2) age and retirement, and (3) gender. The green boxes below highlight "new" information about these components. In addition to the information we already knew about these first three components, sparse pca reveals more variables that contribute to each component that would have been difficult to pick out of the noise from the full model.
+
+Interpretations: 
+
+1. Food and housing expenditures are two of the most influential costs to US households. It's also very reasonable that these two costs vary greatly between households based on location, family size, and lifestyle.
+   
+2. Kids and the number of income-earning members are projected in the opposite direction of the retirement and elderly variables. This makes sense as we knew this principal component to represent aging populations who receive supplemental assistance from the goverment.
+
+3. Vehicles are projected in the same direction as the male variables. While this can be a funny moment to joke about the car-loving men stereotype, its important to note that the loading for number of vehicles is only ~0.167 and that is pretty insignificant overall. This would be a good variable to include for a more in-depth analysis of gender differences in income and expenditure, though it means very little for my analysis here in sparse PCA.
+
 
 
 ## PCA, Independent Analysis
