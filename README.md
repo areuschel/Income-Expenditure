@@ -190,16 +190,66 @@ Interpretations:
 3. Vehicles are projected in the same direction as the male variables. While this can be a funny moment to joke about the car-loving men stereotype, its important to note that the loading for number of vehicles is only ~0.167 and that is pretty insignificant overall. This would be a good variable to include for a more in-depth analysis of gender differences in income and expenditure, though it means very little for my analysis here in sparse PCA.
 
 
+## Clustering, Replication
+![title](/title_slide_5.png?raw=true "PCA")
 
-## PCA, Independent Analysis
+
+### Two approaches: ClustOfVar and varclus libraries
+
+#### 📍Why pick a hierarchical model?
+
+Clustering models that require Euclidean distance calculations require continuous variables. Since this data contains both continuous and categorical binary variables, we must select a clustering technique suited for this scenario. The following clustering techniques use different linkage methods for determining similarity.
+
+#### 📍Two options: hclustvar vs. varclus 
+
+There are a ton of packages in R that perform hierarchical clustering. These are just two that Hu selected and used for comparison. Here are the key differences:
+
+hclustvar()
+
+- Similarity of variables is calculated using correlation ratio (categorical vars) & squared correlation (continuous vars)
+- Clusters are formed using homogeneity of merged clusters as criterion
+
+varclus()
+
+- Similarity of variables is calculated using (i) Hoeffding’s D-Statistic, (ii) Spearman’s rho, OR (iii) Pearson’s rho
+
+
+
+Then, clustering is performed through hclust() and the linkage method is selected
+
+
+
+
+
+
+
+### Comparing results
+
+## CCA: Canonical Correlation Analysis
+
+#### Checking CCA Assumptions:
+- <b>Continuous variables</b>
+   - ✅
+- <b>Linear relationships between variables</b>
+   - ✅
+- <b>High sample size</b>
+   - ✅
+- <b>No significant outliers</b>
+   - ❌✅
+
+### Comparing Results
+
+
+
+## Further Independent Analysis
+
+### Changing the use of categorical variables
+
+### Checking for MV Outliers
+
+#### My Full Model, without MV outliers
+
 ![title](/title_slide_4.png?raw=true "PCA")
-
-
-#### Multivariate Outliers
-
-#### My Full Model
-
-After completing the replication, I had many ideas of what I wanted to do differently. 
 
 1. Number of principal componenets = 
 
@@ -221,39 +271,9 @@ After completing the replication, I had many ideas of what I wanted to do differ
 
 ![biplot](/biplot_pca1.png?raw=true "PCA")
 
-
 #### Comparing PCA Models, Replication vs. Independent Analysis
 ![compare](/pca_comparison.png?raw=true "PCA")
 
-
-
-## Clustering, Replication
-![title](/title_slide_5.png?raw=true "PCA")
-
-
-### Two approaches: ClustOfVar and varclus libraries
-
-### Comparing results
-
-## CCA: Canonical Correlation Analysis
-
-#### Checking CCA Assumptions:
-- <b>Continuous variables</b>
-   - ✅
-- <b>Linear relationships between variables</b>
-   - ✅
-- <b>High sample size</b>
-   - ✅
-- <b>No significant outliers</b>
-   - ❌✅
-
-### Comparing Results
-
-## Further Independent Analysis
-
-### Changing the use of categorical variables
-
-### Checking for MV Outliers
 
 ### K-means Clustering
 
