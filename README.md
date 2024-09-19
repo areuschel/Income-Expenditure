@@ -177,7 +177,7 @@ Data is sparse either when (1) the raw data contains many 0's or (2) you choose 
 
 ![title](/sparse_loadings.png?raw=true "PCA")
 
-Looking at the first three PC's (contain most inforamtion about variance), you can see that the rest of the variables are set to 0 because the k value selected was 5 (k=5). 
+Looking at the first three PC's, you can see that the rest of the variables are set to 0 because the k value selected was 5 (k=5). 
 
 Recall, the first three PC's from the full model represented (1) income and expenditure, (2) age and retirement, and (3) gender. The green boxes below highlight "new" information about these components. In addition to the information we already knew about these first three components, sparse pca reveals more variables that contribute to each component that would have been difficult to pick out of the noise from the full model.
 
@@ -185,7 +185,7 @@ Interpretations:
 
 1. Food and housing expenditures are two of the most influential costs to US households. It's also very reasonable that these two costs vary greatly between households based on location, family size, and lifestyle.
    
-2. Kids and the number of income-earning members are projected in the opposite direction of the retirement and elderly variables. This makes sense as we knew this principal component to represent aging populations who receive supplemental assistance from the goverment.
+2. Kids and the number of income-earning members are projected in the opposite direction of the retirement and elderly variables. This makes sense as we knew this principal component to represent aging populations who receive supplemental assistance from the government.
 
 3. Vehicles are projected in the same direction as the male variables. While this can be a funny moment to joke about the car-loving men stereotype, its important to note that the loading for number of vehicles is only ~0.167 and that is pretty insignificant overall. This would be a good variable to include for a more in-depth analysis of gender differences in income and expenditure, though it means very little for my analysis here in sparse PCA.
 
