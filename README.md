@@ -212,20 +212,33 @@ hclustvar()
 varclus()
 
 - Similarity of variables is calculated using (i) Hoeffding’s D-Statistic, (ii) Spearman’s rho, OR (iii) Pearson’s rho
-
-
-
-Then, clustering is performed through hclust() and the linkage method is selected
-
-
-
-
-
-
+- Clusters are formed using one of the following linkage methods : 'average', 'complete'
 
 ### Comparing results
 
+1. Dendrogram created using hclustvar()
+
+![title](/dend_1.png?raw=true "PCA")
+
+- From this dendrogram, three main clusters emerge: (1) age and family composition, (2) education and income/expenditures, and (3) gender, race, and geography.
+- Family variables are grouped together on the lefthand side, and the race variables are grouped on the righthand side.
+- Looking more granularly, we see that this clustering model was able to group fam_size and kids together as well as age, elderly, and retirement together in a separate grouping.
+
+2. Dendrogram created using varclus()
+
+![title](/dend_2.png?raw=true "PCA")
+
+- All combinations of hyperparameters were tested. (ie. Spearman, Hoeffding, or Pearson WITH average or complete linkage)
+- None of the models using this technique worked well on the data- dendrogram above shows poor hierchical structure
+
+
 ## CCA: Canonical Correlation Analysis
+
+The final multivariate method I replicated from Hu's original paper is Canonical Correlation Analysis (CCA). This method is used to explore how groups of variables influence one another opposed to investigating the relationship between individual variables. 
+
+#### 📍 Group Selection
+
+The two selected groups for examining correlation are income and expenditure. A correlation plot of variables belonging to these groups reveals mostly positive relationships between income and expenditure variables (Appendix, Figure 14). Hu selects four of the most important income and four of the most important expenditure variables to run CCA with. This yielded the square root of eigenvalues to be (0.59, 0.19, 0.04, and 0.00). The first value, 0.59, represents the correlation between linear combinations of the chosen income variables, U1, and linear combinations of the chosen expenditure variables, V1. This value is high enough to support preconceived beliefs that income and expenditure are dependent on one another. The eigenvectors show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well (Appendix, Table 4). In the same table, we can see that the expenditure variables’ influences on each canonical variate differ more between variates, with total expenditure being the most influential on the first variate; yet housing, healthcare, and food costs contribute more to the other variates. Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
 
 #### Checking CCA Assumptions:
 - <b>Continuous variables</b>
