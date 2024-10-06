@@ -261,7 +261,32 @@ Although I was pleasantly surprised at my ability to replicate each of Hu’s me
 
 In addition to diluting the dataset with “0”s, this choice tip-toes around key assumptions of multivariate methods used. To rectify the issue of categorical features without losing all key demographic information, I decided to use these categories to subset the original dataset.
 
+#### Part 1: Educational Attainment
+
+The original data has 8 different categories of educational attainment. This was hurting the analysis because these categories were so close together and disproportionate (One category only had 22 observations total!!). I combined all 8 and split them into 2 categories: (1) 'Some College' and (2) 'No College'.
+
+Proportion of sample:
+
+🧑🏽‍🏫 Some College, n = 2,728
+
+🧑🏻‍🚀 No College, n = 1,526
+
+#### Part 2: Racial/Ethnic Groups
+
+I did a similar tactic with the race categories as I did with educational attainment, creating “White” and “POC” groups. The data was too heavily skewed towards the White respondents that the previous 5 categories for non-White identities were difficult to draw any interpretations from. 
+
+While I typically advise against grouping all non-White racial categories together— since it can overlook the unique challenges and strengths of each racial identity— in this case, it was the most practical approach to increase sample size and balance the proportions between groups. 
+
+Proportion of sample:
+
+- Race_White, n = 3,490
+
+- Race_POC, n = 764
+
+
 ### Checking for MV Outliers
+
+
 
 #### My Full Model, without MV outliers
 
