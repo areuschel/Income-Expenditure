@@ -198,7 +198,7 @@ Interpretations:
 
 #### 📍Why pick a hierarchical model?
 
-Clustering models that require Euclidean distance calculations require continuous variables. Since this data contains both continuous and categorical binary variables, we must select a clustering technique suited for this scenario. The following clustering techniques use different linkage methods for determining similarity.
+Clustering models that use Euclidean distance calculations require continuous variables. Since this data contains both continuous and categorical binary variables, we must select a clustering technique suited for this scenario. The following clustering techniques use different linkage methods for determining similarity.
 
 #### 📍Two options: hclustvar vs. varclus 
 
@@ -238,7 +238,14 @@ The final multivariate method I replicated from Hu's original paper is Canonical
 
 #### 📍 Group Selection
 
-The two selected groups for examining correlation are income and expenditure. A correlation plot of variables belonging to these groups reveals mostly positive relationships between income and expenditure variables (Appendix, Figure 14). Hu selects four of the most important income and four of the most important expenditure variables to run CCA with. This yielded the square root of eigenvalues to be (0.59, 0.19, 0.04, and 0.00). The first value, 0.59, represents the correlation between linear combinations of the chosen income variables, U1, and linear combinations of the chosen expenditure variables, V1. This value is high enough to support preconceived beliefs that income and expenditure are dependent on one another. The eigenvectors show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well (Appendix, Table 4). In the same table, we can see that the expenditure variables’ influences on each canonical variate differ more between variates, with total expenditure being the most influential on the first variate; yet housing, healthcare, and food costs contribute more to the other variates. Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
+The two selected groups for examining correlation are income and expenditure. Hu selects four of the most important income and four of the most important expenditure variables to run CCA with. This yielded the square root of eigenvalues to be (0.59, 0.19, 0.04, and 0.00). 
+
+The first value, 0.59, represents the correlation between linear combinations of the chosen income variables, U1, and linear combinations of the chosen expenditure variables, V1. This value is high enough to support preconceived beliefs that income and expenditure are dependent on one another. 
+
+![title](/eigen.png?raw=true "PCA")
+
+
+The eigenvectors show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well (Appendix, Table 4). In the same table, we can see that the expenditure variables’ influences on each canonical variate differ more between variates, with total expenditure being the most influential on the first variate; yet housing, healthcare, and food costs contribute more to the other variates. Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
 
 #### Checking CCA Assumptions:
 - <b>Continuous variables</b>
