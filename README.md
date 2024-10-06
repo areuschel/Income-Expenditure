@@ -245,7 +245,11 @@ The first value, 0.59, represents the correlation between linear combinations of
 ![title](/eigen.png?raw=true "PCA")
 
 
-The eigenvectors show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well (Appendix, Table 4). In the same table, we can see that the expenditure variables’ influences on each canonical variate differ more between variates, with total expenditure being the most influential on the first variate; yet housing, healthcare, and food costs contribute more to the other variates. Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
+- The eigenvectors above show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well.
+  
+- In the same table, we can see that the expenditure variables’ influences on each canonical variate differ more between variates, with total expenditure being the most influential on the first variate; yet housing, healthcare, and food costs contribute more to the other variates.
+
+- Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
 
 #### Checking CCA Assumptions:
 - <b>Continuous variables</b>
