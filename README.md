@@ -251,23 +251,17 @@ The first value, 0.59, represents the correlation between linear combinations of
 
 - Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
 
-#### Checking CCA Assumptions:
-- <b>Continuous variables</b>
-   - ✅
-- <b>Linear relationships between variables</b>
-   - ✅
-- <b>High sample size</b>
-   - ✅
-- <b>No significant outliers</b>
-   - ❌✅
 
-### Comparing Results
+![title](/break.JPG?raw=true "PCA")
 
 
-
-## Further Independent Analysis
+## Independent Analysis, A. Reuschel 2024
 
 ### Changing the use of categorical variables
+
+Although I was pleasantly surprised at my ability to replicate each of Hu’s methods, I found that the results obtained were not super informative and many of the models had poor performace. My biggest qualm with the replication process was the sheer number of dummy variables added through one-hot encoding to include categorical variables. 
+
+In addition to diluting the dataset with “0”s, this choice tip-toes around key assumptions of multivariate methods used. To rectify the issue of categorical features without losing all key demographic information, I decided to use these categories to subset the original dataset.
 
 ### Checking for MV Outliers
 
