@@ -185,7 +185,7 @@ Interpretations:
    
 2. Kids and the number of income-earning members are projected in the opposite direction of the retirement and elderly variables. This makes sense as we knew this principal component to represent aging populations who receive supplemental assistance from the government.
 
-3. Vehicles are projected in the same direction as the male variables, which might evoke the classic 'guys and their wheels' trope. But don't get too revved up— the loading for number of vehicles is only ~0.167, which isn’t significant keeping in mind that this is a sparse PCA. Though this variable doesn't play a big role in this sparse PCA analysis, it could still be interesting for a deeper dive into gender differences in income and expenditure.
+3. Vehicles are projected in the same direction as the male variables. However, the loading for number of vehicles is only ~0.167, which isn’t significant keeping in mind that this is a sparse PCA. Though this variable doesn't play a big role in this sparse PCA analysis, it could still be interesting for a deeper dive into gender differences in income and expenditure.
 
 
 ## Clustering, Replication
