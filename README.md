@@ -21,7 +21,7 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 
 <h2>Project walk-through:</h2>
 
-![bls](/bls_slide.png?raw=true "PCA")
+![bls](/glimpse1.JPG?raw=true "PCA")
 
 ## Table of Contents
 
@@ -49,7 +49,7 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 
 ## Part I: Replication, Hu (2022)
 
-![bls](/bls_slide.png?raw=true "PCA")
+![bls](/glimpse2.JPG?raw=true "PCA")
 
 ## Replication Paper
 This project was based off an existing paper written by Mingzhao Hu, a biostatistician and lecturer at the Mayo Clinic who published a research paper in 2022 while at the University of California Santa Barbara using data from the 2016 Consumer Expenditure survey. The motivation behind this paper was to create a data analysis and visualization pipeline for understanding the relationship between demographics, income, and expenditures for US households. 
@@ -280,9 +280,6 @@ The first value, 0.59, represents the correlation between linear combinations of
 - Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
 
 
-![title](/break.JPG?raw=true "PCA")
-
-
 ## Part II: Independent Analysis, A. Reuschel (2024)
 
 ![title](/break.JPG?raw=true "PCA")
@@ -391,7 +388,7 @@ Other findings from the loadings of these principal components communicate diffe
 
 ## Conclusions
 
-![title](/break.JPG?raw=true "PCA")
+![title](/glimpse4.JPG?raw=true "PCA")
 
 ### Paper Acknowledgement
 
