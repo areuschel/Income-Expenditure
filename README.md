@@ -21,6 +21,36 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 
 <h2>Project walk-through:</h2>
 
+![bls](/bls_slide.png?raw=true "PCA")
+
+## Table of Contents
+
+### Part I: Replication, Hu (2022)
+   - Replication Paper Information and Description
+   - Feature Selection and Description of Variables
+   - EDA
+   - PCA
+      - Racial Stratifications
+      - Same-sex Households
+   - Sparse PCA
+   - Hierarchical Clustering
+   - CCA
+
+### Part II: Independent Analysis, Reuschel (2024)
+   - Changing Use of Categorical Variables
+   - Identifying Multivariate Outliers
+   - New PCA Outcomes
+   - K-means Clustering
+
+### Conclusion
+   - Paper Acknowledgement
+   - Impact of Independent Analysis
+   - Future Considerations
+
+## Part I: Replication, Hu (2022)
+
+![bls](/bls_slide.png?raw=true "PCA")
+
 ## Replication Paper
 This project was based off an existing paper written by Mingzhao Hu, a biostatistician and lecturer at the Mayo Clinic who published a research paper in 2022 while at the University of California Santa Barbara using data from the 2016 Consumer Expenditure survey. The motivation behind this paper was to create a data analysis and visualization pipeline for understanding the relationship between demographics, income, and expenditures for US households. 
 
@@ -253,7 +283,9 @@ The first value, 0.59, represents the correlation between linear combinations of
 ![title](/break.JPG?raw=true "PCA")
 
 
-## Independent Analysis, A. Reuschel 2024
+## Part II: Independent Analysis, A. Reuschel (2024)
+
+![title](/break.JPG?raw=true "PCA")
 
 ### Changing the use of categorical variables
 
@@ -358,6 +390,8 @@ Other findings from the loadings of these principal components communicate diffe
 ### Principal Components Analysis (PCA)
 
 ## Conclusions
+
+![title](/break.JPG?raw=true "PCA")
 
 ### Paper Acknowledgement
 
