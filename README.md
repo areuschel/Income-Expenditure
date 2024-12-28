@@ -3,7 +3,7 @@ Replicated data pipeline for understanding income and expenditures of US househo
 
 <h2>Description</h2>
 
-![bls](/bls_slide.png?raw=true "PCA")
+![bls](/Photos/bls_slide.png?raw=true "PCA")
 
 The study of consumer behaviors is integral to the regulation of domestic and international trade, understanding trends in social welfare, and identifying the groups most vulnerable to market changes.
 
@@ -21,7 +21,7 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 
 <h2>Project walk-through:</h2>
 
-![bls](/glimpse1.JPG?raw=true "PCA")
+![bls](/Photos/glimpse1.JPG?raw=true "PCA")
 
 ## Table of Contents
 
@@ -49,7 +49,7 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 
 ## Part I: Replication, Hu (2022)
 
-![bls](/glimpse2.JPG?raw=true "PCA")
+![bls](/Photos/glimpse2.JPG?raw=true "PCA")
 
 ## Replication Paper
 This project was based off an existing paper written by Mingzhao Hu, a biostatistician and lecturer at the Mayo Clinic who published a research paper in 2022 while at the University of California Santa Barbara using data from the 2016 Consumer Expenditure survey. The motivation behind this paper was to create a data analysis and visualization pipeline for understanding the relationship between demographics, income, and expenditures for US households. 
@@ -63,7 +63,7 @@ BLS Data: https://www.bls.gov/cex/pumd.htm
 ### Feature Selection and Description
 Mingzhao Hu used financial domain knowledge to select 35 of the 808 original features that represented different dimensions of income, expenditure, and demographic information. Brief descriptions of each variable are given below. For replication purposes, I used the same variables.
 
-![Norm](/variable_desc.JPEG?raw=true "Test")
+![Norm](/Plots/variable_desc.JPEG?raw=true "Test")
 
 
 ## Exploratory Data Analysis
@@ -91,7 +91,7 @@ Many of the statistical methods used in this project assume continuous variables
 - The table below shows variables removed due to high % of missing data
 - The figure on the right shows the distribution of racial categories
 
-![eda](/EDA_comb.JPEG?raw=true "Test")
+![eda](/Plots/EDA_comb.JPEG?raw=true "Test")
 
 
 
@@ -101,12 +101,12 @@ The correlation matrix for these 43 variables is large, so it is visualized with
 
 It is important to note that the outer top right section looks like there is no relationship between many of the variables, but this is due to the many dummy variables created for race, education, and sex. Otherwise, we can note that the other income and expenditure variables are related either negatively or positively. These relationships are needed to validate assumptions for PCA and other statistical methods employed in this project.
 
-![Norm](/corr_m.png?raw=true "Test")
+![Norm](/Plots/corr_m.png?raw=true "Test")
 
 
 
 ## Statistical Methods: Replication
-![Norm](/title_slide_1.png?raw=true "Test")
+![Norm](/Title_Slides/title_slide_1.png?raw=true "Test")
 
 As always, let's check the assumptions of the first method. The following checklist follows Mingzhao Hu's paper. The assumptions not addressed in the replication paper will be addressed in the independent analysis section.
 
@@ -128,7 +128,7 @@ As always, let's check the assumptions of the first method. The following checkl
 
    - This number is selected from the scree plot below where the 'elbow' is. In other words, where does the proportion of variance from one PC to the next 'drop-off'?/ Where does each subsequent PC explain around the same % of variance as the previous?
 
-![scree](/Scree_rep1.png?raw=true "PCA")
+![scree](/Plots/Scree_rep1.png?raw=true "PCA")
 
 2. Proportion of variance explained
 
@@ -144,18 +144,18 @@ Using PC1 and PC2 from the model above, observations are graphed and split accor
 The most notable difference seen in my plots below is that the White respondents occupy more space above the first principal component that represents important income and expenditure variables. While the overall model did not perform exceedingly well, this raises the question of income disparities between White and non-White racial groups. For a more robust interterpretation of racial difference in consumer behavior, I would prefer to have higher sample sizes for Black, Asian, and Multi-racial family units.
 
 
-![race](/pc1_race.png?raw=true "PCA")
+![race](/Plots/pc1_race.png?raw=true "PCA")
 
 
 ### Single-sex Household Model, Replication
 
 One additional group Hu extracted from this data was single-sex households. This is an interesting group to analyze as it contains information about same-sex couples, people living alone, and single parents. These groups are expected to have different consumer behaviors, which is the purpose for running these models separately. The image below shows how this subset was created.
 
-![chunk](/chunk_1.png?raw=true "PCA")
+![chunk](/Plots/chunk_1.png?raw=true "PCA")
 
 #### Output: Scree Plot and Biplot
 
-![scree](/biplot_scree_ss.JPEG?raw=true "PCA")
+![scree](/Plots/biplot_scree_ss.JPEG?raw=true "PCA")
 
 1. Number of principal componenets = 4
 
@@ -183,7 +183,7 @@ Unsurprisingly, these variables point in opposite directions on this biplot. Wha
 
 
 ### Sparse PCA, Replication
-![title](/title_slide_3.png?raw=true "PCA")
+![title](/Title_Slides/title_slide_3.png?raw=true "PCA")
 
 #### 🤷🏼 What is sparse PCA?
 
@@ -203,7 +203,7 @@ Data is sparse either when (1) the raw data contains many 0's or (2) you choose 
 
 #### Output: loadings
 
-![title](/sparse_loadings.png?raw=true "PCA")
+![title](/Plots/sparse_loadings.png?raw=true "PCA")
 
 Looking at the first three PC's, you can see that the rest of the variables are set to 0 because the k value selected was 5 (k=5). 
 
@@ -219,7 +219,7 @@ Interpretations:
 
 
 ## Clustering, Replication
-![title](/title_slide_5.png?raw=true "PCA")
+![title](/Title_Slides/title_slide_5.png?raw=true "PCA")
 
 
 ### Two approaches: ClustOfVar and varclus libraries
@@ -246,7 +246,7 @@ varclus()
 
 1. Dendrogram created using hclustvar()
 
-![title](/dend_1.png?raw=true "PCA")
+![title](/Plots/dend_1.png?raw=true "PCA")
 
 - From this dendrogram, three main clusters emerge: (1) age and family composition, (2) education and income/expenditures, and (3) gender, race, and geography.
 - Family variables are grouped together on the lefthand side, and the race variables are grouped on the righthand side.
@@ -254,7 +254,7 @@ varclus()
 
 2. Dendrogram created using varclus()
 
-![title](/dend_2.png?raw=true "PCA")
+![title](/Plots/dend_2.png?raw=true "PCA")
 
 - All combinations of hyperparameters were tested. (ie. Spearman, Hoeffding, or Pearson WITH average or complete linkage)
 - None of the models using this technique worked well on the data- dendrogram above shows poor hierchical structure
@@ -270,7 +270,7 @@ The two selected groups for examining correlation are income and expenditure. Hu
 
 The first value, 0.59, represents the correlation between linear combinations of the chosen income variables, U1, and linear combinations of the chosen expenditure variables, V1. This value is high enough to support preconceived beliefs that income and expenditure are dependent on one another. 
 
-![title](/eigen.png?raw=true "PCA")
+![title](/Plots/eigen.png?raw=true "PCA")
 
 
 - The eigenvectors above show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well.
@@ -282,7 +282,7 @@ The first value, 0.59, represents the correlation between linear combinations of
 
 ## Part II: Independent Analysis, A. Reuschel (2024)
 
-![title](/break.JPG?raw=true "PCA")
+![title](/Photos/break.JPG?raw=true "PCA")
 
 ### Changing the use of categorical variables
 
@@ -323,7 +323,7 @@ With my newly made subsets (‘no college’, ‘some college’, ‘white respo
 
 I plotted these outliers on multiple different dimensions but was dissatisfied with the number of observations this cutoff would remove. Thus, I chose to increase the distance threshold from 42.98 to 60. This now only labels 280 observations as outliers, which are graphed on both income and expenditure as well as income and retirement.
 
-![title](/outliers.JPEG?raw=true "MVN-out")
+![title](/Plots/outliers.JPEG?raw=true "MVN-out")
 
 As you can see from the plots above, most of the outliers occur among respondents who are <b>not</b> receiving retirement income. This observation was consistent throughout all subsets and shows us that individuals on retirement are spending their money more responsibly and are not accounting for large discrepancies in the data. These 280 observations are removed, making the new sample size n = 3,974.
 
@@ -331,7 +331,7 @@ As you can see from the plots above, most of the outliers occur among respondent
 
 After removing multivariate outliers from each subset, I re-ran my PCAs.
 
-![title](/new_biplots1.JPEG?raw=true "PCA-out")
+![title](/Plots/new_biplots1.JPEG?raw=true "PCA-out")
 
 For the two educational subsets, the overall variance explained increased drastically from the replicated full model. 
 
@@ -356,11 +356,11 @@ I completed these same steps for the two new race groups. Again, more of the tot
 
 Other findings from the loadings of these principal components communicate differences in consumer habits by these two racial groups. First, this PCA model was the very first out of all (recall: full model, single-sex, sparse, no college, and some college) to have government supplemental assistance programs as significant to any of the first 5 components. In the fifth component for the POC group, the variable ‘welfarem’ has a loading of -0.48. The other variables significant to this component are ‘men_o16’ and ‘educacq’. The appearance of the welfare variable highlights a unique situation for POC households that may relate to systemic disadvantages that lend POC individuals more likely to rely on government assistance. This in coordination with education and men over 16 (able to work, so could symbolize employment) can be interpreted as additional struggles in gaining access to stable jobs and educational opportunities.
 
-![title](/title_slide_4.png?raw=true "PCA")
+![title](/Title_Slides/title_slide_4.png?raw=true "PCA")
 
 1. Number of principal componenets = 
 
-![scree](/scree_pca1.png?raw=true "PCA")
+![scree](/Plots/scree_pca1.png?raw=true "PCA")
 
 2. Proportion of variance explained
 
@@ -376,10 +376,10 @@ Other findings from the loadings of these principal components communicate diffe
 
 3. Biplot, PC1-PC2
 
-![biplot](/biplot_pca1.png?raw=true "PCA")
+![biplot](/Plots/biplot_pca1.png?raw=true "PCA")
 
 #### Comparing PCA Models, Replication vs. Independent Analysis
-![compare](/pca_comparison.png?raw=true "PCA")
+![compare](/Plots/pca_comparison.png?raw=true "PCA")
 
 
 ### K-means Clustering
@@ -388,7 +388,7 @@ Other findings from the loadings of these principal components communicate diffe
 
 ## Conclusions
 
-![title](/glimpse4.JPG?raw=true "PCA")
+![title](/Photos/glimpse4.JPG?raw=true "PCA")
 
 ### Paper Acknowledgement
 
