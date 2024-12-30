@@ -355,13 +355,28 @@ As you can see from the plots above, most of the outliers occur among respondent
 
 After removing multivariate outliers from each subset, I re-ran my PCAs.
 
+```{r}
+# setting a contribution threshold for better plots
+cont_edu <- nc_pca$rotation^2
+cont_sc <- sc_pca$rotation^2
+
+# must contribute at least 5%
+threshold <- 0.05
+
+vars_keep2 <- apply(cont_edu[,1:2], 1, function(x) any(x >= threshold2))
+vars_keep3 <- apply(cont_sc[,1:2], 1, function(x) any(x >= threshold2))
+
+filt_edu <- cont_edu[vars_keep2, 1:2]
+filt_sc <- cont_sc[vars_keep3, 1:2]
+```
+
 ![title](/Plots/new_biplots1.JPEG?raw=true "PCA-out")
 
 For the two educational subsets, the overall variance explained increased drastically from the replicated full model. 
 
 - For “no college” respondents, 5 PCs explain 54.4% of the total variance and for “some college” respondents, 5 PCs explain 54.1% of the total variance.
    - Comparing this with the original replicated PCA model where only 38% of the total variance is explained in 5PCs, this shows great improvement in interpretability and model performance.
-   - 
+     
 - The biplots made for each educational group do not appear so different because PC1 for both represents income variables and PC2 represents age and retirement variables. This is the same as the replicated full model, which tells us that these two dimensions truly hold the most variance even when split between groups of different educational levels.
 
 #### PCA Loadings, 'Some College' vs. 'No College'
