@@ -274,6 +274,24 @@ The final multivariate method I replicated from Hu's original paper is Canonical
 
 The two selected groups for examining correlation are income and expenditure. Hu selects four of the most important income and four of the most important expenditure variables to run CCA with. This yielded the square root of eigenvalues to be (0.59, 0.19, 0.04, and 0.00). 
 
+```{r}
+# income vars
+income <- cca_df %>%
+   select(fam_income, fam_supp, frretirm, fsalarym)
+
+# expenditure vars
+exp <- cca_df %>%
+   select(-c(fam_income, fam_supp, frretirm, fsalarym))
+
+exp4 <- exp %>%
+   select(foodcq, totexpcq, houscq, healthcq)
+
+# run CCA
+cca_result <- cancor(income, exp4)
+
+cca_result$cor
+```
+
 The first value, 0.59, represents the correlation between linear combinations of the chosen income variables, U1, and linear combinations of the chosen expenditure variables, V1. This value is high enough to support preconceived beliefs that income and expenditure are dependent on one another. 
 
 ![title](/Plots/eigen.png?raw=true "PCA")
