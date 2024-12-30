@@ -422,7 +422,7 @@ I completed these same steps for the two new race groups. Again, more of the tot
 
 ![scree](/Plots/pca_race2.JPEG?raw=true "PCA")
 
-The main difference in the biplots for these two groups is that for the White respondents, both PC1 and PC2 have all-negative coefficients where the POC group has all positive coefficients for PC2 (Appendix, Figures 19-20). This is incredibly revealing as it suggests the impacts of income are the same for these groups, but as they age and receive retirement benefits there is an underlying difference in structure for how POC individuals experience aging as it relates to consumer behaviors and costs.
+The main difference in the biplots for these two groups is that for the White respondents, both PC1 and PC2 have all-negative coefficients where the POC group has all positive coefficients for PC2. This is incredibly revealing as it suggests the impacts of income are the same for these groups, but as they age and receive retirement benefits there is an underlying difference in structure for how POC individuals experience aging as it relates to consumer behaviors and costs.
 
 Other findings from the loadings of these principal components communicate differences in consumer habits by these racial groups. 
 
