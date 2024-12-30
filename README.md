@@ -466,7 +466,6 @@ When analyzing the groups for the White respondents, the two densest clusters, c
 
 When compared with the POC plots, the high-income group is once again one large cluster. Due to the spread being greater for low-income, low-spending households in both educational subsets and the POC subset, I will speculate that there is a mismatch in this dataset that skews the White respondents towards higher incomes. 
 - While this could be an accurate representation of income distribution in the US, I am reluctant to make such conclusions without more proportional data for the POC group.
-   - There are additional methods that could test this interpretation much better which I will consider in my concluding statements.
 
 ### CCA
 
@@ -548,6 +547,12 @@ These results support previous conclusions on this dataset that show a level of 
 
 ### Paper Acknowledgement
 
+Hu’s paper provides a detailed and comprehensive view of data from the Bureau of Labor Statistics’ Consumer Expenditure survey by employing multivariate statistical methods for interpretation and visualization. The combination of PCA, clustering, and CCA is a strong foundational basis for understanding the relationships between chosen variables. 
+
+The contribution of this paper is undeniable, given the great attention to detail in documentation and the public availability of the data. Hu’s work is greatly important to the use of the CE survey as his domain knowledge allowed him to reduce the dimensions of the dataset from 808 to 35 prior to analysis. Without this contribution, navigating through such a large dataset would have been daunting and time-consuming.
+
 ### Impact of Independent Analysis
 
-### Future Considerations
+I enjoyed the process of this project very much. I have attempted replication once before but used a different dataset than the ones the authors had. Being able to work with the same data is interesting because I can start to see where my knowledge of a subject has a role to play in making decisions about the data. 
+
+In this case, I wanted to check and validate additional assumptions that the author missed, and this turned out to improve the performance of the models. I also thought that my use of the categorical variables enhanced the interpretation abilities of all of the methods, despite the drawbacks of simplifying the educational and racial categories.
