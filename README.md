@@ -357,9 +357,20 @@ As you can see from the plots above, most of the outliers occur among respondent
 
 After removing multivariate outliers from each subset, I re-ran my PCAs.
 
-#### Comparing PCA Models, Replication vs. Independent Analysis
+The table below shows the dimensionality reduction outcomes of 3 PCA models. The first two models are replicated from Hu's paper, and the last one is the result of the full model replication with multivariate outliers removed.
+
+Highlighted in green are two takeaways from comparing these models.
+
 ![compare](/Plots/pca_comparison.png?raw=true "PCA")
 
+- First, the model that explained most of the total variance was the model separating out single-sex households.
+   - This could be due to the smaller sample size of homes that fit in this category.
+     
+- The second circled piece of information provides evidence that removing multivariate outliers improved the performance of the technique.
+   - More variation is explained in less variables.
+      - Hu's full model used 15 variables to explain 36.8% of total variation in the data.
+      - My full model used only 12 variables to explain 37.2% of total variation in the data.
+         - This enhances the performance of PCA as a dimensionality reduction technique, further narrowing down the variables we are interested in.
 
 
 #### Code for setting a contribution threshold
