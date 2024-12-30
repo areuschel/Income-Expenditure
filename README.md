@@ -420,7 +420,7 @@ A few interesting differences come about when viewing the loadings of these 5 PC
 
 I completed these same steps for the two new race groups. Again, more of the total variance was explained through 5 PCs: 56.2% for White respondents and 56.8% for the POC group. 
 
-![scree](/Plots/race_pca.png?raw=true "PCA")
+![scree](/Plots/pca_race2.JPEG?raw=true "PCA")
 
 The main difference in the biplots for these two groups is that for the White respondents, both PC1 and PC2 have all-negative coefficients where the POC group has all positive coefficients for PC2 (Appendix, Figures 19-20). This is incredibly revealing as it suggests the impacts of income are the same for these groups, but as they age and receive retirement benefits there is an underlying difference in structure for how POC individuals experience aging as it relates to consumer behaviors and costs.
 
