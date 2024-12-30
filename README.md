@@ -436,6 +436,38 @@ Other findings from the loadings of these principal components communicate diffe
 
 ### K-means Clustering
 
+Due to the fact that I re-invented the way in which categorical variables would be used for this dataset, my new subsets only included continuous variables. This made me curious about the application of k-means clustering, which was only omitted by Hu because of his inclusion of categorical variables. 
+
+This method relies on minimizing the within sum of squares of each cluster to delineate groups from the overall spread of data. I had already performed PCA on these new subsets, so I decided to further investigate this method by clustering observations on the first two principal components for both the educational and racial groups.
+
+#### Education: 'No college' vs. 'Some college'
+I first took the “no college” group and set the number of clusters to 3. The result obtained from this clustering almost resembled a pie chart, with the center of the circle nearly missing the origin. 
+
+![scree](/Plots/KMeans_2.JPEG?raw=true "PCA")
+
+This makes sense conceptually as observations should be more similar based on their proximity to each principal component. The choice of 3 groups was validated through an elbow plot that showed a gradual decrease in within-cluster variation after 3.
+
+Cluster 1 as denoted in the legend seems to represent the high-earners and spenders of this group as the biplot in figure 17 show the projections for income and expenditure variables in this direction. Clusters 2 and 3 then subsequently represent low- earners and spenders with the difference between these groups being age primarily.
+
+For the ‘some college’ group, I selected the same number of clusters and observed similar groupings. The scree plot again confirmed that this was a good choice for number of clusters. 
+
+The first cluster as denoted in the legend shows many more observations in this category of high-earners and spenders as well as a few identifiable outliers belonging to this cluster. This validates preconceived assumptions that people with more education tend to earn and spend more money. 
+
+The other two clusters are dense, showing a potent middle class between both young and old respondents.
+
+#### Race: 'Race-White' vs. 'Race-POC'
+
+Next, I performed k-means clustering on the White and POC datasets using their respective principal components. Once more, 3 clusters are observed to be the best number through elbow plots.
+
+![scree](/Plots/KMeans_3.JPEG?raw=true "PCA")
+
+When analyzing the groups for the White respondents, the two densest clusters, clusters 1 and 3 according to the legend in figure 25, fall towards higher earners and spenders. 
+- This is a change from the educational plots, that showed one big cluster for this group. 
+
+When compared with the POC plots, the high-income group is once again one large cluster. Due to the spread being greater for low-income, low-spending households in both educational subsets and the POC subset, I will speculate that there is a mismatch in this dataset that skews the White respondents towards higher incomes. 
+- While this could be an accurate representation of income distribution in the US, I am reluctant to make such conclusions without more proportional data for the POC group.
+   - There are additional methods that could test this interpretation much better which I will consider in my concluding statements.
+
 
 ## Conclusions
 
