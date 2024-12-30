@@ -510,7 +510,7 @@ importance_sc2 <- sqrt(rowSums(cca_res_sc$ycoefˆ2)) # Importance of expenditure
 importance_sc2
 ```
 
-![scree](/Plots/CCA_table1.JPEG?raw=true "PCA")
+![scree](/Plots/CCA_table1.png?raw=true "PCA")
 
 The summarized table of importance above shows the overall contribution of each expenditure variable and contrasts it with the opposing group. The expenditure variables for each category are more important to the canonical variate for those without college educations compared to those with some level of higher education.
 
@@ -536,7 +536,7 @@ cca_res_poc <- cancor(income_poc, exp_poc)
 cca_res_poc
 ```
 
-![scree](/Plots/CCA_table2.JPEG?raw=true "PCA")
+![scree](/Plots/CCA_table2.png?raw=true "PCA")
 
 This table shows a similar pattern as the educational attainment stratifications shown before. In this case, we can see that the expenditure variables more heavily influence each canonical variate in households identifying as either Black, Asian, Indigenous, or 2+ races as compared to the White households.
 
