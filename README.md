@@ -203,6 +203,12 @@ Data is sparse either when (1) the raw data contains many 0's or (2) you choose 
 
 #### Output: loadings
 
+```{r}
+sparse_pca <- nsprcomp(fmli_16, ncomp = 3, center = T, scale. = T, k = c(5,5,5), nneg = FALSE)
+
+sparse_pca$rotation
+```
+
 ![title](/Plots/sparse_loadings.png?raw=true "PCA")
 
 Looking at the first three PC's, you can see that the rest of the variables are set to 0 because the k value selected was 5 (k=5). 
