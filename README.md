@@ -351,10 +351,18 @@ I plotted these outliers on multiple different dimensions but was dissatisfied w
 
 As you can see from the plots above, most of the outliers occur among respondents who are <b>not</b> receiving retirement income. This observation was consistent throughout all subsets and shows us that individuals on retirement are spending their money more responsibly and are not accounting for large discrepancies in the data. These 280 observations are removed, making the new sample size n = 3,974.
 
+### Principal Components Analysis (PCA)
+
 #### My Full Model, without MV outliers
 
 After removing multivariate outliers from each subset, I re-ran my PCAs.
 
+#### Comparing PCA Models, Replication vs. Independent Analysis
+![compare](/Plots/pca_comparison.png?raw=true "PCA")
+
+
+
+#### Code for setting a contribution threshold
 ```{r}
 # setting a contribution threshold for better plots
 cont_edu <- nc_pca$rotation^2
@@ -369,6 +377,7 @@ vars_keep3 <- apply(cont_sc[,1:2], 1, function(x) any(x >= threshold2))
 filt_edu <- cont_edu[vars_keep2, 1:2]
 filt_sc <- cont_sc[vars_keep3, 1:2]
 ```
+#### PCA stratifications: Educational attainment & Race
 
 ![title](/Plots/new_biplots1.JPEG?raw=true "PCA-out")
 
@@ -377,10 +386,15 @@ For the two educational subsets, the overall variance explained increased drasti
 - For “no college” respondents, 5 PCs explain 54.4% of the total variance and for “some college” respondents, 5 PCs explain 54.1% of the total variance.
    - Comparing this with the original replicated PCA model where only 38% of the total variance is explained in 5PCs, this shows great improvement in interpretability and model performance.
      
-- The biplots made for each educational group do not appear so different because PC1 for both represents income variables and PC2 represents age and retirement variables. This is the same as the replicated full model, which tells us that these two dimensions truly hold the most variance even when split between groups of different educational levels.
 
 #### PCA Loadings, 'Some College' vs. 'No College'
 (Note: I consider a loading to be 'significant' if it exceeds +/- 0.30)
+
+```
+# print loadings of first 5 PC's
+sc_pca$rotation[ ,1:5]
+nc_pca$rotation[ ,1:5]
+```
 
 A few interesting differences come about when viewing the loadings of these 5 PCs for the different education levels. 
 
@@ -391,39 +405,26 @@ A few interesting differences come about when viewing the loadings of these 5 PC
 - Not a single variable in component five for the ‘no college’ group was significant, but in the ‘some college’ group, educational costs (-0.59) and the number of cars (-0.33) were both important to the fifth component.
    - This suggests that the fifth component could be explaining variation in ‘extraneous’ expenditure categories that are not necessarily important to survival like food and housing.
 
-I completed these same steps for the two new race groups. Again, more of the total variance was explained through 5 PCs: 56.2% for White respondents and 56.8% for the POC group. The main difference in the biplots for these two groups is that for the White respondents, both PC1 and PC2 have all-negative coefficients where the POC group has all positive coefficients for PC2 (Appendix, Figures 19-20). This is incredibly revealing as it suggests the impacts of income are the same for these groups, but as they age and receive retirement benefits there is an underlying difference in structure for how POC individuals experience aging as it relates to consumer behaviors and costs.
+#### PCA Loadings, 'Race-White' vs. 'Race-POC'
 
-Other findings from the loadings of these principal components communicate differences in consumer habits by these two racial groups. First, this PCA model was the very first out of all (recall: full model, single-sex, sparse, no college, and some college) to have government supplemental assistance programs as significant to any of the first 5 components. In the fifth component for the POC group, the variable ‘welfarem’ has a loading of -0.48. The other variables significant to this component are ‘men_o16’ and ‘educacq’. The appearance of the welfare variable highlights a unique situation for POC households that may relate to systemic disadvantages that lend POC individuals more likely to rely on government assistance. This in coordination with education and men over 16 (able to work, so could symbolize employment) can be interpreted as additional struggles in gaining access to stable jobs and educational opportunities.
+I completed these same steps for the two new race groups. Again, more of the total variance was explained through 5 PCs: 56.2% for White respondents and 56.8% for the POC group. 
 
-![title](/Title_Slides/title_slide_4.png?raw=true "PCA")
+![scree](/Plots/race_pca.png?raw=true "PCA")
 
-1. Number of principal componenets = 
+The main difference in the biplots for these two groups is that for the White respondents, both PC1 and PC2 have all-negative coefficients where the POC group has all positive coefficients for PC2 (Appendix, Figures 19-20). This is incredibly revealing as it suggests the impacts of income are the same for these groups, but as they age and receive retirement benefits there is an underlying difference in structure for how POC individuals experience aging as it relates to consumer behaviors and costs.
 
-![scree](/Plots/scree_pca1.png?raw=true "PCA")
+Other findings from the loadings of these principal components communicate differences in consumer habits by these racial groups. 
 
-2. Proportion of variance explained
+- First, this PCA model was the very first out of all (recall: full model, single-sex, sparse, no college, and some college) to have government supplemental assistance programs as significant to any of the first 5 components.
+   -  In the fifth component for the POC group, the variable ‘welfarem’ has a loading of -0.48.
+      -  The appearance of the welfare variable highlights a unique situation for POC households that may relate to systemic disadvantages that lend POC individuals more likely to rely on government assistance.
 
-   PC1: %
-
-   PC2: %
-
-   PC3: %
-
-   PC4: %
-
-🎖 TOTAL: % 
-
-3. Biplot, PC1-PC2
-
-![biplot](/Plots/biplot_pca1.png?raw=true "PCA")
-
-#### Comparing PCA Models, Replication vs. Independent Analysis
-![compare](/Plots/pca_comparison.png?raw=true "PCA")
+   -  The other variables significant to this component are ‘men_o16’ and ‘educacq’.
+      -  These variables, representing education and men over 16 (able to work), can be interpreted as additional struggles in gaining access to stable jobs and educational opportunities.
 
 
 ### K-means Clustering
 
-### Principal Components Analysis (PCA)
 
 ## Conclusions
 
