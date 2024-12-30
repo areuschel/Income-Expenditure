@@ -468,6 +468,79 @@ When compared with the POC plots, the high-income group is once again one large 
 - While this could be an accurate representation of income distribution in the US, I am reluctant to make such conclusions without more proportional data for the POC group.
    - There are additional methods that could test this interpretation much better which I will consider in my concluding statements.
 
+### CCA
+
+The final method tested with my changes to the dataset was CCA. My hope was that in removing outliers and subsetting the data by the educational and racial variables, I would be able to see a clearer relationship between the selected income and expenditure variables.
+
+#### Differences in Educational Attainment
+
+CCA Code
+```{r}
+# split into income & exp vars
+income_no <- cca_no %>%
+   select(fam_income, fam_supp, frretirm, fsalarym) # select only income vars
+exp_no <- cca_no %>%
+   select(-c(fam_income, fam_supp, frretirm, fsalarym)) # select NOT income vars
+
+income_some <- cca_some %>%
+   select(fam_income, fam_supp, frretirm, fsalarym)
+exp_some <- cca_some %>%
+   select(-c(fam_income, fam_supp, frretirm, fsalarym))
+
+# run cca for both educational groups
+cca_res_no <- cancor(income_no, exp_no)
+cca_res_no
+
+cca_res_sc <- cancor(income_some, exp_some)
+cca_res_sc
+```
+
+Variable Importance Code
+```
+# variable importance, no college
+importance_nc <- sqrt(rowSums(cca_res_no$xcoefˆ2)) # Importance of income variables
+importance_nc
+importance_nc2 <- sqrt(rowSums(cca_res_no$ycoefˆ2)) # Importance of expenditure variables
+importance_nc2
+
+# variable importance, some college
+importance_sc <- sqrt(rowSums(cca_res_sc$xcoefˆ2)) # Importance of income variables
+importance_sc
+importance_sc2 <- sqrt(rowSums(cca_res_sc$ycoefˆ2)) # Importance of expenditure variables
+importance_sc2
+```
+
+![scree](/Plots/CCA_table1.JPEG?raw=true "PCA")
+
+The summarized table of importance above shows the overall contribution of each expenditure variable and contrasts it with the opposing group. The expenditure variables for each category are more important to the canonical variate for those without college educations compared to those with some level of higher education.
+
+#### Differences in Racial Identity Groups
+
+```{r}
+# selecting vars
+income_wht <- cca_wht %>%
+   select(fam_income, fam_supp, frretirm, fsalarym)
+exp_wht <- cca_wht %>%
+   select(-c(fam_income, fam_supp, frretirm, fsalarym))
+
+income_poc <- cca_poc %>%
+   select(fam_income, fam_supp, frretirm, fsalarym)
+exp_poc <- cca_poc %>%
+   select(-c(fam_income, fam_supp, frretirm, fsalarym))
+
+# perform cca
+cca_res_wht <- cancor(income_wht, exp_wht)
+cca_res_wht
+
+cca_res_poc <- cancor(income_poc, exp_poc)
+cca_res_poc
+```
+
+![scree](/Plots/CCA_table2.JPEG?raw=true "PCA")
+
+This table shows a similar pattern as the educational attainment stratifications shown before. In this case, we can see that the expenditure variables more heavily influence each canonical variate in households identifying as either Black, Asian, Indigenous, or 2+ races as compared to the White households.
+
+These results support previous conclusions on this dataset that show a level of socioeconomic privilege in the US economic system given to White households and those with college degrees.
 
 ## Conclusions
 
