@@ -328,7 +328,7 @@ Proportion of sample:
 
 I did a similar tactic with the race categories as I did with educational attainment, creating “White” and “POC” groups. The data was too heavily skewed towards the White respondents that the previous 5 categories for non-White identities were difficult to draw any interpretations from. 
 
-While I typically advise against grouping all non-White racial categories together— since it can overlook the unique challenges and strengths of each racial identity— in this case, it was the most practical approach to increase sample size and balance the proportions between groups. 
+While I typically would discourage the grouping of all non-White racial categories together—thus eliminating the opportunity to find key differences between racial/ethnic categories— in this case, it was the most practical approach to increase sample size and balance the proportions between groups. Due to this, no interpretations are made regarding the individual non-White subgroups.
 
 Proportion of sample:
 
