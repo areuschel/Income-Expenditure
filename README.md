@@ -3,7 +3,7 @@ Replicated data pipeline for understanding income and expenditures of US househo
 
 <h2>Description</h2>
 
-![bls](/Photos/bls_slide.png?raw=true "PCA")
+<img src="/Photos/bls_slide.png" width="400">
 
 The study of consumer behaviors is integral to the regulation of domestic and international trade, understanding trends in social welfare, and identifying the groups most vulnerable to market changes.
 
@@ -21,20 +21,12 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 
 <h2>Project walk-through:</h2>
 
-![bls](/Photos/glimpse1.JPG?raw=true "PCA")
+<img src="/Photos/glimpse1.JPG" width="850">
 
 ## Table of Contents
 
 ### Part I: Replication, Hu (2022)
    - Replication Paper Information and Description
-   - Feature Selection and Description of Variables
-   - EDA
-   - PCA
-      - Racial Stratifications
-      - Same-sex Households
-   - Sparse PCA
-   - Hierarchical Clustering
-   - CCA
 
 ### Part II: Independent Analysis, Reuschel (2024)
    - Changing Use of Categorical Variables
@@ -49,41 +41,37 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
 
 ## Part I: Replication, Hu (2022)
 
-![bls](/Photos/glimpse2.JPG?raw=true "PCA")
+<img src="/Photos/glimpse2.JPG" width="850">
 
 ## Replication Paper
-This project was based off an existing paper written by Mingzhao Hu, a biostatistician and lecturer at the Mayo Clinic who published a research paper in 2022 while at the University of California Santa Barbara using data from the 2016 Consumer Expenditure survey. The motivation behind this paper was to create a data analysis and visualization pipeline for understanding the relationship between demographics, income, and expenditures for US households. 
+This project was based off an existing paper written by Mingzhao Hu who published a [research paper](https://link.springer.com/article/10.1007/s00180-022-01251-2) in 2022 while at the University of California Santa Barbara using data from the 2016 Consumer Expenditure survey. The motivation behind this paper was to create a data analysis and visualization pipeline for understanding the relationship between demographics, income, and expenditures for US households. 
 
-The Consumer Expenditure (CE) survey is unique in that it is the only nationwide survey of demographics, income, expenditure that measures responses on a quarterly basis. In this paper, Hu uses consumer response data from the first quarter of the 2016 fiscal year. The raw data contains 808 original variables, from which Hu initially selects 35 to perform multivariate statistical methods on. In this paper, Hu employs multivariate methods such as Principal Components Analysis (PCA), hierarchical clustering, and Canonical Correlation Analysis (CCA) to draw insights about the relationships between selected variables.
+The Consumer Expenditure [(CE)](https://www.bls.gov/cex/pumd.htm) survey is unique in that it is the only nationwide survey of demographics, income, expenditure that measures responses on a quarterly basis. In this paper, Hu uses consumer response data from the first quarter of the 2016 fiscal year. The raw data contains 808 original variables, from which Hu initially selects 35 to perform multivariate statistical methods on. In this paper, Hu employs multivariate methods such as Principal Components Analysis (PCA), hierarchical clustering, and Canonical Correlation Analysis (CCA) to draw insights about the relationships between selected variables.
 
-Hu, Paper: https://link.springer.com/article/10.1007/s00180-022-01251-2
-
-BLS Data: https://www.bls.gov/cex/pumd.htm
 
 ### Feature Selection and Description
-Mingzhao Hu used financial domain knowledge to select 35 of the 808 original features that represented different dimensions of income, expenditure, and demographic information. Brief descriptions of each variable are given below. For replication purposes, I used the same variables.
 
-![Norm](/Plots/variable_desc.JPEG?raw=true "Test")
-
+Hu used financial domain knowledge to select 35 of the 808 original features that represented different dimensions of income, expenditure, and demographic information. For replication purposes, I used the same variables.
 
 ## Exploratory Data Analysis
+
 ### Dealing with Categorical Variables
+
 Many of the statistical methods used in this project assume continuous variables. There are still ways to incorporate categorical information. One option will be shown in the replication section, while I propose an alternative use in the independent analysis section of this project.
 
 
 #### Variable breakdown:
 
-🌆 (14) - consumer demographics (includes the 4 categorical variables)
-
-💰 (10) - consumer income
-
-🛍️ (11) - consumer expenditures
+| Variable Type | Data Type: Numeric or Categorical | Number of variables |
+|---|---|---|
+| Demographics | 10 numeric, 4 categorical | 14 |
+| Income Variables | numeric | 10 |
+| Expenditure Variables | numeric | 11 |
 
 🟰 6,426 total observations, 35 total variables
 
-- Hu decides to one-hot encode the rest of the categorical variables, creating more columns of “1”s and “0”s. For replication purposes, I followed this step, though I will discuss other options in the independent analysis section of this paper. 
-
-- The first flag raised in exploratory analysis was that many households reported values of “0” for total expenditure. This is unrealistic and therefore 2,171 observations are removed. Hu examines these missing observations, but no apparent patterns are found; thus, he assumes this is random.
+   - Hu decides to one-hot encode the rest of the categorical variables, creating more columns of “1”s and “0”s.
+   - For replication purposes, I followed this step, though I will discuss other options in the independent analysis section of this paper. 
 
 
 ### Missing Values and Distribution of Race
@@ -91,8 +79,7 @@ Many of the statistical methods used in this project assume continuous variables
 - The table below shows variables removed due to high % of missing data
 - The figure on the right shows the distribution of racial categories
 
-![eda](/Plots/EDA_comb.JPEG?raw=true "Test")
-
+<img src="/Plots/EDA_comb.JPEG" width="800">
 
 
 ### Correlation Matrix
@@ -101,12 +88,10 @@ The correlation matrix for these 43 variables is large, so it is visualized with
 
 It is important to note that the outer top right section looks like there is no relationship between many of the variables, but this is due to the many dummy variables created for race, education, and sex. Otherwise, we can note that the other income and expenditure variables are related either negatively or positively. These relationships are needed to validate assumptions for PCA and other statistical methods employed in this project.
 
-![Norm](/Plots/corr_m.png?raw=true "Test")
-
+<img src="/Plots/corr_m.png" width="800">
 
 
 ## Statistical Methods: Replication
-![Norm](/Title_Slides/title_slide_1.png?raw=true "Test")
 
 As always, let's check the assumptions of the first method. The following checklist follows Mingzhao Hu's paper. The assumptions not addressed in the replication paper will be addressed in the independent analysis section.
 
@@ -128,7 +113,7 @@ As always, let's check the assumptions of the first method. The following checkl
 
    - This number is selected from the scree plot below where the 'elbow' is. In other words, where does the proportion of variance from one PC to the next 'drop-off'?/ Where does each subsequent PC explain around the same % of variance as the previous?
 
-![scree](/Plots/Scree_rep1.png?raw=true "PCA")
+<img src="/Plots/Scree_rep1.png" width="700">
 
 2. Proportion of variance explained
 
@@ -143,19 +128,18 @@ Using PC1 and PC2 from the model above, observations are graphed and split accor
 
 The most notable difference seen in my plots below is that the White respondents occupy more space above the first principal component that represents important income and expenditure variables. While the overall model did not perform exceedingly well, this raises the question of income disparities between White and non-White racial groups. For a more robust interterpretation of racial difference in consumer behavior, I would prefer to have higher sample sizes for Black, Asian, and Multi-racial family units.
 
-
-![race](/Plots/pc1_race.png?raw=true "PCA")
+<img src="/Plots/pc1_race.png" width="700">
 
 
 ### Single-sex Household Model, Replication
 
 One additional group Hu extracted from this data was single-sex households. This is an interesting group to analyze as it contains information about same-sex couples, people living alone, and single parents. These groups are expected to have different consumer behaviors, which is the purpose for running these models separately. The image below shows how this subset was created.
 
-![chunk](/Plots/chunk_1.png?raw=true "PCA")
+<img src="/Plots/chunk_1.png" width="700">
 
 #### Output: Scree Plot and Biplot
 
-![scree](/Plots/biplot_scree_ss.JPEG?raw=true "PCA")
+<img src="/Plots/biplot_scree_ss.JPEG" width="700">
 
 1. Number of principal componenets = 4
 
@@ -173,17 +157,13 @@ One additional group Hu extracted from this data was single-sex households. This
 
 As you can see from the total proportion of variance explained, this model did not show improvement from the previous full model. Later on, I discuss changes that improve the performance of these models.
 
-3. Biplot, PC1-PC2
-
-Note: I set a contribution threshold of 0.05 for plotting so that only the most important variables could be clearly seen. 
-
-Interpretation: It is clear and reasonable that the male and female variables contribute greatly overall to this model because the data was trimmed to only include single-sex homes.
+**Interpretation:**
+It is clear and reasonable that the male and female variables contribute greatly overall to this model because the data was trimmed to only include single-sex homes.
 Unsurprisingly, these variables point in opposite directions on this biplot. What this plot further reveals is that the variables for family size and number of kids in the household are projected in the same positive direction as the female variables on the second principal component. This tells us that many of the single-sex homes are likely to be single mothers and have more children in the household than the male single-sex households.
 
-
+---
 
 ### Sparse PCA, Replication
-![title](/Title_Slides/title_slide_3.png?raw=true "PCA")
 
 #### 🤷🏼 What is sparse PCA?
 
@@ -191,9 +171,9 @@ Sparse PCA works similarly to regular PCA, but sets a new constraint on the mode
 
 #### Pros and Cons of sparse PCA
 
-🚀 Pros - reduces noise, increases interpretability of the individual principal components
+**Pros** - reduces noise, increases interpretability of the individual principal components
 
-⛓️‍💥 Cons - oversimplifies the principal components
+**Cons** - oversimplifies the principal components
 
 #### First, is this data sparse?
 
