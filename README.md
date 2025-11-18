@@ -229,7 +229,7 @@ varclus()
 
 1. Dendrogram created using hclustvar()
 
-<img src="/Plots/dend_1.png" width = 400 />
+<img src="/Plots/dend_1.png" width = 550 />
 
 - From this dendrogram, three main clusters emerge: (1) age and family composition, (2) education and income/expenditures, and (3) gender, race, and geography.
 - Family variables are grouped together on the lefthand side, and the race variables are grouped on the righthand side.
@@ -237,7 +237,7 @@ varclus()
 
 2. Dendrogram created using varclus()
 
-<img src="/Plots/dend_2.png" width = 400 />
+<img src="/Plots/dend_2.png" width = 550 />
 
 - All combinations of hyperparameters were tested. (ie. Spearman, Hoeffding, or Pearson WITH average or complete linkage)
 - None of the models using this technique worked well on the data- dendrogram above shows poor hierchical structure
@@ -271,7 +271,7 @@ cca_result$cor
 
 The first value, 0.59, represents the correlation between linear combinations of the chosen income variables, U1, and linear combinations of the chosen expenditure variables, V1. This value is high enough to support preconceived beliefs that income and expenditure are dependent on one another. 
 
-<img src="/Plots/eigen.png" width = 400 />
+<img src="/Plots/eigen.png" width = 500 />
 
 
 - The eigenvectors above show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well.
@@ -339,7 +339,7 @@ The table below shows the dimensionality reduction outcomes of 3 PCA models. The
 
 Highlighted in green are two takeaways from comparing these models.
 
-<img src="/Plots/pca_comparison.png" width = 450 />
+<img src="/Plots/pca_comparison.png" width = 550 />
 
 - First, the model that explained most of the total variance was the model separating out single-sex households.
    - This could be due to the smaller sample size of homes that fit in this category.
