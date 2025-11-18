@@ -188,25 +188,22 @@ sparse_pca <- nsprcomp(fmli_16, ncomp = 3, center = T, scale. = T, k = c(5,5,5),
 
 sparse_pca$rotation
 ```
-
-![title](/Plots/sparse_loadings.png?raw=true "PCA")
+<img src="/Plots/sparse_loadings.png" width = 400 />
 
 Looking at the first three PC's, you can see that the rest of the variables are set to 0 because the k value selected was 5 (k=5). 
 
 Recall, the first three PC's from the full model represented (1) income and expenditure, (2) age and retirement, and (3) gender. The green boxes above highlight "new" information about these components. In addition to the information we already knew about these first three components, sparse pca reveals more variables that contribute to each component that would have been difficult to pick out of the noise from the full model.
 
-Interpretations: 
+**Sparse PCA Interpretations:**
 
-1. Food and housing expenditures are two of the most influential costs to US households. It's also very reasonable that these two costs vary greatly between households based on location, family size, and lifestyle.
-   
-2. Kids and the number of income-earning members are projected in the opposite direction of the retirement and elderly variables. This makes sense as we knew this principal component to represent aging populations who receive supplemental assistance from the government.
-
-3. Vehicles are projected in the same direction as the male variables. However, the loading for number of vehicles is only ~0.167, which isn’t significant keeping in mind that this is a sparse PCA. Though this variable doesn't play a big role in this sparse PCA analysis, it could still be interesting for a deeper dive into gender differences in income and expenditure.
+| Variables | Finding |
+|---|---|
+|Food, Housing Expenditures| Food and housing expenditures are two of the most influential costs to US households. It's also very reasonable that these two costs vary greatly between households based on location, family size, and lifestyle.|
+|Kids, Income-earners, Elderly | Kids and the number of income-earning members are projected in the opposite direction of the retirement and elderly variables. This makes sense as we knew this principal component to represent aging populations who receive supplemental assistance from the government. |
+|Sex, Vehicles| Vehicles are projected in the same direction as the male variables. However, the loading for number of vehicles is only ~0.167, which isn’t significant keeping in mind that this is a sparse PCA. Though this variable doesn't play a big role in this sparse PCA analysis, it could still be interesting for a deeper dive into gender differences in income and expenditure. |
 
 
 ## Clustering, Replication
-![title](/Title_Slides/title_slide_5.png?raw=true "PCA")
-
 
 ### Two approaches: ClustOfVar and varclus libraries
 
@@ -232,7 +229,7 @@ varclus()
 
 1. Dendrogram created using hclustvar()
 
-![title](/Plots/dend_1.png?raw=true "PCA")
+<img src="/Plots/dend_1.png" width = 400 />
 
 - From this dendrogram, three main clusters emerge: (1) age and family composition, (2) education and income/expenditures, and (3) gender, race, and geography.
 - Family variables are grouped together on the lefthand side, and the race variables are grouped on the righthand side.
@@ -240,7 +237,7 @@ varclus()
 
 2. Dendrogram created using varclus()
 
-![title](/Plots/dend_2.png?raw=true "PCA")
+<img src="/Plots/dend_2.png" width = 400 />
 
 - All combinations of hyperparameters were tested. (ie. Spearman, Hoeffding, or Pearson WITH average or complete linkage)
 - None of the models using this technique worked well on the data- dendrogram above shows poor hierchical structure
@@ -274,7 +271,7 @@ cca_result$cor
 
 The first value, 0.59, represents the correlation between linear combinations of the chosen income variables, U1, and linear combinations of the chosen expenditure variables, V1. This value is high enough to support preconceived beliefs that income and expenditure are dependent on one another. 
 
-![title](/Plots/eigen.png?raw=true "PCA")
+<img src="/Plots/eigen.png" width = 400 />
 
 
 - The eigenvectors above show that family income, the first row of E1, contributes highly for the first canonical variate and strongly influences the next three variates as well.
@@ -327,6 +324,7 @@ With my newly made subsets (‘no college’, ‘some college’, ‘white respo
 
 I plotted these outliers on multiple different dimensions but was dissatisfied with the number of observations this cutoff would remove. Thus, I chose to increase the distance threshold from 42.98 to 60. This now only labels 280 observations as outliers, which are graphed on both income and expenditure as well as income and retirement.
 
+
 ![title](/Plots/outliers.JPEG?raw=true "MVN-out")
 
 As you can see from the plots above, most of the outliers occur among respondents who are <b>not</b> receiving retirement income. This observation was consistent throughout all subsets and shows us that individuals on retirement are spending their money more responsibly and are not accounting for large discrepancies in the data. These 280 observations are removed, making the new sample size n = 3,974.
@@ -341,7 +339,7 @@ The table below shows the dimensionality reduction outcomes of 3 PCA models. The
 
 Highlighted in green are two takeaways from comparing these models.
 
-![compare](/Plots/pca_comparison.png?raw=true "PCA")
+<img src="/Plots/pca_comparison.png" width = 450 />
 
 - First, the model that explained most of the total variance was the model separating out single-sex households.
    - This could be due to the smaller sample size of homes that fit in this category.
