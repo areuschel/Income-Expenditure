@@ -39,7 +39,7 @@ The Bureau of Labor Statistics (BLS) is the primary government organ that gather
    - Paper Acknowledgement
    - Impact of Independent Analysis
 
-<a href="#replication-section" />
+<a name="replication-section" />
 
 ## Part I: Replication, Hu (2022)
 
@@ -280,7 +280,7 @@ The first value, 0.59, represents the correlation between linear combinations of
   
 - In the same table, we can see that the expenditure variables’ influences on each canonical variate differ more between variates, with total expenditure being the most influential on the first variate; yet housing, healthcare, and food costs contribute more to the other variates.
 
-<a href="#ind-section" />
+<a name="ind-section" />
 
 - Overall, this tells us that income can better be generalized through total family income, whereas outcomes can greatly differ between the various expenditure dimensions.
 
