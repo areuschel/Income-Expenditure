@@ -368,7 +368,7 @@ filt_sc <- cont_sc[vars_keep3, 1:2]
 ```
 #### PCA stratifications: Educational attainment & Race
 
-![title](/Plots/new_biplots1.JPEG?raw=true "PCA-out")
+<img src="/Plots/new_biplots1.JPEG" width = 650 />
 
 For the two educational subsets, the overall variance explained increased drastically from the replicated full model. 
 
@@ -398,7 +398,7 @@ A few interesting differences come about when viewing the loadings of these 5 PC
 
 I completed these same steps for the two new race groups. Again, more of the total variance was explained through 5 PCs: 56.2% for White respondents and 56.8% for the POC group. 
 
-![scree](/Plots/pca_race2.JPEG?raw=true "PCA")
+<img src="/Plots/pca_race2.JPEG" width = 650 />
 
 The main difference in the biplots for these two groups is that for the White respondents, both PC1 and PC2 have all-negative coefficients where the POC group has all positive coefficients for PC2. This is incredibly revealing as it suggests the impacts of income are the same for these groups, but as they age and receive retirement benefits there is an underlying difference in structure for how POC individuals experience aging as it relates to consumer behaviors and costs.
 
@@ -421,7 +421,8 @@ This method relies on minimizing the within sum of squares of each cluster to de
 #### Education: 'No college' vs. 'Some college'
 I first took the “no college” group and set the number of clusters to 3. The result obtained from this clustering almost resembled a pie chart, with the center of the circle nearly missing the origin. This makes sense conceptually as observations should be more similar based on their proximity to each principal component. The choice of 3 groups was validated through an elbow plot that showed a gradual decrease in within-cluster variation after 3.
 
-![scree](/Plots/KMeans_2.JPEG?raw=true "PCA")
+<img src="/Plots/KMeans_2.JPEG" width = 650 />
+
 
 'No college'
 - Cluster 1 as denoted in the legend seems to represent the high-earners and spenders of this group as its previous biplot shows the projections for income and expenditure variables in this direction.
@@ -437,7 +438,7 @@ I first took the “no college” group and set the number of clusters to 3. The
 
 Next, I performed k-means clustering on the White and POC datasets using their respective principal components. Once more, 3 clusters are observed to be the best number through elbow plots.
 
-![scree](/Plots/KMeans_3.JPEG?raw=true "PCA")
+<img src="/Plots/KMeans_3.JPEG" width = 650 />
 
 When analyzing the groups for the White respondents, the two densest clusters, clusters 1 and 3 according to the legend in figure 25, fall towards higher earners and spenders. 
 - This is a change from the educational plots, that showed one big cluster for this group. 
@@ -487,7 +488,7 @@ importance_sc2 <- sqrt(rowSums(cca_res_sc$ycoefˆ2)) # Importance of expenditure
 importance_sc2
 ```
 
-![scree](/Plots/CCA_table1.png?raw=true "PCA")
+<img src="/Plots/CCA_table1.png" width = 650 />
 
 The summarized table of importance above shows the overall contribution of each expenditure variable and contrasts it with the opposing group. The expenditure variables for each category are more important to the canonical variate for those without college educations compared to those with some level of higher education.
 
@@ -513,7 +514,7 @@ cca_res_poc <- cancor(income_poc, exp_poc)
 cca_res_poc
 ```
 
-![scree](/Plots/CCA_table2.png?raw=true "PCA")
+<img src="/Plots/CCA_table2.png" width = 650 />
 
 This table shows a similar pattern as the educational attainment stratifications shown before. In this case, we can see that the expenditure variables more heavily influence each canonical variate in households identifying as either Black, Asian, Indigenous, or 2+ races as compared to the White households.
 
