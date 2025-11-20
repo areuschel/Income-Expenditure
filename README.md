@@ -343,7 +343,7 @@ The table below shows the dimensionality reduction outcomes of 3 PCA models. The
 
 Highlighted in green are two takeaways from comparing these models.
 
-<img src="/Plots/pca_comparison.png" width = 750 />
+<img src="/Plots/pca_comparison.png" width = 700 />
 
 - First, the model that explained most of the total variance was the model separating out single-sex households.
    - This could be due to the smaller sample size of homes that fit in this category.
@@ -372,7 +372,7 @@ filt_sc <- cont_sc[vars_keep3, 1:2]
 ```
 #### PCA stratifications: Educational attainment & Race
 
-<img src="/Plots/new_biplots1.JPEG" width = 700 />
+<img src="/Plots/new_biplots1.JPEG" width = 800 />
 
 For the two educational subsets, the overall variance explained increased drastically from the replicated full model. 
 
@@ -402,7 +402,7 @@ A few interesting differences come about when viewing the loadings of these 5 PC
 
 I completed these same steps for the two new race groups. Again, more of the total variance was explained through 5 PCs: 56.2% for White respondents and 56.8% for the POC group. 
 
-<img src="/Plots/pca_race2.JPEG" width = 700 />
+<img src="/Plots/pca_race2.JPEG" width = 800 />
 
 The main difference in the biplots for these two groups is that for the White respondents, both PC1 and PC2 have all-negative coefficients where the POC group has all positive coefficients for PC2. This is incredibly revealing as it suggests the impacts of income are the same for these groups, but as they age and receive retirement benefits there is an underlying difference in structure for how POC individuals experience aging as it relates to consumer behaviors and costs.
 
