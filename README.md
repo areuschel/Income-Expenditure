@@ -231,7 +231,7 @@ varclus()
 
 1. Dendrogram created using hclustvar()
 
-<img src="/Plots/dend_1.png" width = 550 />
+<img src="/Plots/dend_1.png" width = 600 />
 
 - From this dendrogram, three main clusters emerge: (1) age and family composition, (2) education and income/expenditures, and (3) gender, race, and geography.
 - Family variables are grouped together on the lefthand side, and the race variables are grouped on the righthand side.
@@ -239,7 +239,7 @@ varclus()
 
 2. Dendrogram created using varclus()
 
-<img src="/Plots/dend_2.png" width = 550 />
+<img src="/Plots/dend_2.png" width = 600 />
 
 - All combinations of hyperparameters were tested. (ie. Spearman, Hoeffding, or Pearson WITH average or complete linkage)
 - None of the models using this technique worked well on the data- dendrogram above shows poor hierchical structure
@@ -343,7 +343,7 @@ The table below shows the dimensionality reduction outcomes of 3 PCA models. The
 
 Highlighted in green are two takeaways from comparing these models.
 
-<img src="/Plots/pca_comparison.png" width = 650 />
+<img src="/Plots/pca_comparison.png" width = 750 />
 
 - First, the model that explained most of the total variance was the model separating out single-sex households.
    - This could be due to the smaller sample size of homes that fit in this category.
